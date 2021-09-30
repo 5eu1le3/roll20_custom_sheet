@@ -1,0 +1,484 @@
+.dialog label {
+  display: inline-block;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  width: 20px;
+  height: 100px;
+  background: #004d67;
+}
+
+/* Up */
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  background-image: url(https://imgur.com/WWluwYD.png);
+  background-size: cover;
+}
+
+/* Down */
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  background-image: url(https://imgur.com/0hbSFlq.png);
+  background-size: cover;
+}
+
+::-webkit-scrollbar-track {
+  background: #1c3245;
+}
+
+.charsheet * {
+  vertical-align: middle !important;
+}
+
+.charsheet input[type='text'] {
+  background: #1c3245;
+  border-radius: 0;
+  color: #8895A1;
+  border: none;
+}
+
+.charsheet input[type="number"] {
+  width: 30px !important;
+}
+
+.charsheet input[type="number"]::-webkit-outer-spin-button,
+.charsheet input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.sheet-outer {
+  width: 760px;
+  background-image: url(https://imgur.com/htxGxau.png);
+  /* background: pink; */
+  background-size: contain;
+  height: 1500px;
+  overflow: hidden;
+}
+
+.sheet-wrap {
+  text-align: center;
+}
+
+.sheet-header, .sheet-header h1 {
+  width: inherit;
+  height: 140px;
+}
+
+.sheet-row1 {
+  display: inline-block;
+  width: 660px;
+  height: 160px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.sheet-row1>div {
+  display: inline-block;
+  height: 160px;
+  overflow: hidden;
+  /* background: tomato; */
+}
+
+.sheet-row1>div:not(.sheet-center) {
+  width: 250px;
+}
+
+.sheet-center {
+  width: 120px;
+  height: 160px;
+  margin: 0 15px;
+}
+
+.sheet-info>div {
+  height: 30px;
+  border: 1px solid #004d67;
+  border-radius: 10px;
+  background: #1c3245;
+}
+
+.sheet-info>div:not(.sheet-belong) {
+  margin-bottom: 10px;
+}
+
+.sheet-info>div>span {
+  color: #8895A1;
+  font-weight: bold;
+  padding-left: 3px;
+  padding-right: 9px;
+  line-height: 30px;
+  border-right: 2px solid #8895A1;
+}
+
+.sheet-info>div>input {
+  width: 180px;
+  height: 30px;
+  text-align: center;
+}
+
+.sheet-choice {
+  height: 70px;
+  margin-bottom: 15px;
+}
+
+.sheet-choice>input[type='checkbox']+label {
+  display: block;
+  width: 120px;
+  height: 70px;
+  background-image: url(https://imgur.com/ZjS1eWT.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.sheet-choice>input[type='checkbox']:checked+label {
+  background-image: url(https://imgur.com/1JqfsqI.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.sheet-choice>input[type='checkbox'] {
+  display: none;
+}
+
+.sheet-rollbtn {
+  margin-bottom: 5px;
+}
+
+.sheet-rollbtn>button {
+  display: none;
+}
+
+.sheet-rollbtn>label {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  background-image: url(https://imgur.com/9vN6nCE.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 12px;
+}
+
+.sheet-rollbtn>label:hover {
+  background-image: url(https://imgur.com/wDnhlLU.png);
+}
+
+.charsheet .sheet-sheetChk[value='0']~* .sheet-rollbtn>label[for="rollbtn_s"],
+.charsheet .sheet-sheetChk[value='1']~* .sheet-rollbtn>label[for="rollbtn_b"] {
+  display: none;
+}
+
+.sheet-depth {
+  width: 100px;
+  height: 30px;
+  display: inline-block;
+  background: #1c3245;
+  border: 1px solid #004d67;
+  border-radius: 10px;
+  padding: 0 2px;
+  margin-top: -5px;
+}
+
+.sheet-depth>span {
+  line-height: 30px;
+  color: #8895A1;
+  font-weight: bold;
+}
+
+.sheet-depth>input {
+  background: transparent;
+  border: 0;
+  text-align-last: center;
+  color: #fff;
+  height: 25px;
+}
+
+.sheet-effect>div {
+  height: 70px;
+  background: #1c3245;
+  border: 1px solid #004d67;
+  border-radius: 10px;
+}
+
+.sheet-fragmant_eft {
+  margin-bottom: 15px;
+}
+
+.sheet-sheetChk[value='1'] ~ .sheet-outer .sheet-wrap .sheet-row1 .sheet-effect .sheet-fragmant_eft {
+  display: none;
+}
+
+.sheet-sheetChk[value='1'] ~ .sheet-outer .sheet-wrap .sheet-row1 .sheet-effect .sheet-deform_eft {
+  margin-top: 87px;
+}
+
+.sheet-effect>div>h3 {
+  color: #8895A1;
+  font-size: 12px;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.sheet-effect>div>span {
+  color: #8895A1;
+  margin: 0 5px;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.sheet-effect>div>input {
+  background: transparent;
+  color: #8895A1;
+  text-align-last: center;
+  border: 0;
+  font-size: 15px;
+  width: 10px;
+}
+
+.white {
+  color: #fff !important;
+}
+
+.sheet-effect>div>button {
+  display: none;
+  margin: 0;
+  background: #1c3245;
+  border: 1px solid #004d67;
+}
+
+.sheet-effect>div>label {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  background-image: url(https://imgur.com/Y0LGUi4.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translateY(15%);
+}
+
+.sheet-effect>div>label:hover {
+  background-image: url(https://imgur.com/HpwwfBf.png);
+}
+
+.sheet-fragmant {
+  margin-top: 55px;
+  text-align: center;
+}
+
+.sheet-fragmant>span {
+  display: block;
+  font-weight: bolder;
+  text-align: right;
+  color: #fff;
+  margin-right: 65px;
+  margin-bottom: 10px;
+}
+
+.sheet-fragmant_inner {
+  display: inline-block;
+  width: 660px;
+  height: 55px;
+  border: 1px solid #004d67;
+  background: #1c3245;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding-top: 5px;
+}
+
+.sheet-fragmant_inner>span {
+  color: #8895A1;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.sheet-divider {
+  display: inline-block;
+  width: 560px;
+}
+
+.sheet-divider>input {
+  display: inline;
+  width: 560px;
+  text-align: right;
+}
+
+.sheet-divider>input:nth-child(1) {
+  border-bottom: 2px dashed #8895A1;
+  text-align: left;
+}
+
+.sheet-divider>input:nth-child(2) {
+  color: #fff;
+}
+
+.sheet-fragmant_inner>label {
+  width: 25px;
+  height: 25px;
+  background-image: url(https://imgur.com/v8u40bK.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 10px;
+  margin-right: -10px;
+}
+
+.sheet-fragmant_inner>input:checked~.sheet-fragmant_chk {
+  background-image: url(https://imgur.com/UDaeUQx.png);
+}
+
+.sheet-fragmant_inner>input[type='checkbox'] {
+  display: none;
+}
+
+#deformchk1:checked~.sheet-divider input:nth-last-child(1),
+#deformchk2:checked~.sheet-divider input:nth-last-child(1),
+#deformchk3:checked~.sheet-divider input:nth-last-child(1),
+#deformchk4:checked~.sheet-divider input:nth-last-child(1),
+#deformchk5:checked~.sheet-divider input:nth-last-child(1),
+#deformchk6:checked~.sheet-divider input:nth-last-child(1) {
+  font-weight: bold;
+}
+
+#deformchk1:checked~.sheet-divider input:nth-child(1),
+#deformchk2:checked~.sheet-divider input:nth-child(1),
+#deformchk3:checked~.sheet-divider input:nth-child(1),
+#deformchk4:checked~.sheet-divider input:nth-child(1),
+#deformchk5:checked~.sheet-divider input:nth-child(1),
+#deformchk6:checked~.sheet-divider input:nth-child(1) {
+  color: #1c3245;
+}
+
+.sheet-ect {
+  display: inline-block;
+  width: 650px;
+  margin-top: 42px;
+  margin-left: -10px;
+}
+
+.sheet-ect>div {
+  margin-bottom: 30px;
+}
+
+.sheet-ect>div>h3 {
+  display: none;
+}
+
+.sheet-ect>div>textarea {
+  border: 1px solid #004d67;
+  background: rgba(28, 50, 69, 0.8);
+  color: #8895A1;
+  resize: none;
+}
+
+/* rolltemplate */
+.sheet-rolltemplate-binder>.sheet-container,
+.sheet-rolltemplate-shifter>.sheet-container,
+.sheet-rolltemplate-fragmant>.sheet-container,
+.sheet-rolltemplate-deform>.sheet-container {
+  width: 220px;
+  height: 255px;
+  background-image: url(https://imgur.com/qr6cjuB.png);
+  text-align: center;
+}
+
+.sheet-rolltemplate-binder>.sheet-container .sheet-pcname span,
+.sheet-rolltemplate-shifter>.sheet-container .sheet-pcname span,
+.sheet-rolltemplate-fragmant>.sheet-container .sheet-pcname span,
+.sheet-rolltemplate-deform>.sheet-container .sheet-pcname span {
+  display: inline-block;
+  margin-top: 25px;
+  line-height: 25px;
+  font-size: 15px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.sheet-rolltemplate-binder>.sheet-container .sheet-binderRoll,
+.sheet-rolltemplate-shifter>.sheet-container .sheet-shifterRoll,
+.sheet-rolltemplate-fragmant>.sheet-container .sheet-shifterRoll,
+.sheet-rolltemplate-deform>.sheet-container .sheet-shifterRoll {
+  height: 50px;
+}
+
+.sheet-rolltemplate-binder>.sheet-container .sheet-depthRoll,
+.sheet-rolltemplate-shifter>.sheet-container .sheet-depthRoll {
+  height: 25px;
+  text-align: center;
+  margin: 0 20px;
+}
+
+.sheet-rolltemplate-binder .sheet-container .sheet-depthRoll span,
+.sheet-rolltemplate-shifter .sheet-container .sheet-depthRoll span {
+  font-weight: bold;
+  color: #fff;
+  line-height: 25px;
+  margin: 0 10px;
+}
+
+.sheet-rolltemplate-binder .sheet-container .sheet-rollB,
+.sheet-rolltemplate-shifter .sheet-container .sheet-rollS {
+  width: 180px;
+  height: 80px;
+  text-align: center;
+  margin: 0 20px;
+}
+
+.sheet-rolltemplate-binder .sheet-container .sheet-rollB span {
+  display: inline-block;
+  width: 75px;
+}
+
+.sheet-rolltemplate-binder .sheet-container .sheet-rollB span:nth-child(2) {
+  display: inline-block;
+  width: 20px;
+  transform: translateY(-50%);
+}
+
+.sheet-rolltemplate-binder .sheet-container .sheet-dsc,
+.sheet-rolltemplate-shifter .sheet-container .sheet-dsc,
+.sheet-rolltemplate-fragmant .sheet-container .sheet-dsc,
+.sheet-rolltemplate-deform .sheet-container .sheet-dsc {
+  margin: 0 20px;
+  height: 25px;
+  margin-bottom: 25px;
+}
+
+.sheet-rolltemplate-binder .sheet-container .sheet-dsc p,
+.sheet-rolltemplate-shifter .sheet-container .sheet-dsc p,
+.sheet-rolltemplate-fragmant .sheet-container .sheet-dsc p,
+.sheet-rolltemplate-deform .sheet-container .sheet-dsc p {
+  height: 80px;
+  color: #ccc;
+  font-size: 8px;
+}
+
+.sheet-rolltemplate-fragmant .sheet-container .sheet-dsc p,
+.sheet-rolltemplate-deform .sheet-container .sheet-dsc p {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.sheet-rolltemplate-binder .sheet-container .sheet-dsc p>span,
+.sheet-rolltemplate-shifter .sheet-container .sheet-dsc p>span,
+.sheet-rolltemplate-fragmant .sheet-container .sheet-dsc p>span,
+.sheet-rolltemplate-deform .sheet-container .sheet-dsc p>span {
+  font-weight: bold;
+}
+
+.sheet-rolltemplate-fragmant .sheet-container .sheet-object span,
+.sheet-rolltemplate-fragmant .sheet-container .sheet-now span,
+.sheet-rolltemplate-deform .sheet-container .sheet-now span {
+  color: #fff;
+  display: inline-block;
+  height: 25px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.sheet-rolltemplate-fragmant .inlinerollresult {
+  display: inline !important;
+  opacity: 1 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+}

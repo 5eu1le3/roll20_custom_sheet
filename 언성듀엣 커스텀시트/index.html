@@ -1,0 +1,249 @@
+<input type="hidden" name="attr_chk" class="sheet-sheetChk" value="" />
+
+<div class="sheet-outer">
+  <div class="sheet-wrap">
+    <div class="sheet-header">
+      <h1>
+
+      </h1>
+    </div>
+    <div class="sheet-row1">
+      <div class="sheet-info">
+        <div class="sheet-name">
+          <span>이름</span>
+          <input type="text" name="attr_character_name">
+        </div>
+        <div class="sheet-age">
+          <span>나이</span>
+          <input type="text" name="attr_age">
+        </div>
+        <div class="sheet-gender">
+          <span>성별</span>
+          <input type="text" name="attr_gender">
+        </div>
+        <div class="sheet-belong">
+          <span>소속</span>
+          <input type="text" name="attr_belong">
+        </div>
+
+      </div>
+      <div class="sheet-center">
+        <div class="sheet-choice">
+          <input id="bs_changer1" type="checkbox" name="attr_changer" value="1">
+          <label for="bs_changer1"></label>
+        </div>
+        <div class="sheet-rollbtn">
+          <button type="roll" id="rollbtn_b" value="&{template:binder} {{name=@{character_name}}} {{depth=@{depth}}} {{r1=[[<a href=](http://tinyurl.com/unsungdiceB[[1d6]]#.png)]}} {{r2=[[<a href=](http://tinyurl.com/unsungdiceB[[1d6]]#.png)]}}"></button>
+          <button type="roll" id="rollbtn_s" value="&{template:shifter} {{name=@{character_name}}} {{depth=@{depth}}} {{r1=[[<a href=](http://tinyurl.com/unsungdiceS[[1d10]]#.png)]}}"></button>
+          <label for="rollbtn_b"></label>
+          <label for="rollbtn_s"></label>
+        </div>
+        <div class="sheet-depth">
+          <span>이계심도</span>
+          <input type="number" name="attr_depth">
+        </div>
+      </div>
+      <div class="sheet-effect">
+        <div class="sheet-fragmant_eft">
+          <h3>프래그먼트 효과</h3>
+          <span>현재/최대</span>
+          <input type="number" placeholder="0" name="attr_frgmt_eft" class="white">
+          <span>/</span>
+          <input type="number" placeholder="0" name="attr_frgmt_eft_max">
+          <button type="roll" id="fragmant_roll" value="&{template:fragmant} {{name=@{character_name}}} {{object=?{대상|바인더|시프터}}} {{now=@{frgmt_eft}}} {{numberF=?{소모할 프래그먼트 숫자}}} {{plusF=[[?{소모할 프래그먼트 숫자}*2]]}}"></button>
+          <label for="fragmant_roll" class="sheet-button"></label>
+        </div>
+        <div class="sheet-deform_eft">
+          <h3>이계화</h3>
+          <span>현재/최대</span>
+          <input type="number" placeholder="0" name="attr_deform" class="white">
+          <span>/</span>
+          <input type="number" placeholder="0" name="attr_deform_max">
+          <button type="roll" id="deform_roll" value="&{template:deform} {{name=@{character_name}}} {{now=@{deform}}} {{selectD=?{효과 선택|상대방의 변이를 지웁니다.|바인더의 프래그먼트 효과가 하나 추가됩니다.}}}"></button>
+          <label for="deform_roll" class="sheet-button"></label>
+        </div>
+      </div>
+
+    </div>
+    <div class="sheet-fragmant">
+      <span>망각</span>
+      <div class="sheet-fragmant_inner">
+        <img src="https://imgur.com/Kp1vGGO.png" alt="arrow">
+        <input type="checkbox" id="deformchk1" name="attr_forgetchk1">
+        <div class="sheet-divider">
+          <input type="text" name="attr_fragmant1">
+          <input type="text" name="attr_deform1">
+        </div>
+        <label for="deformchk1" class="sheet-fragmant_chk"></label>
+      </div>
+      <div class="sheet-fragmant_inner">
+        <img src="https://imgur.com/Kp1vGGO.png" alt="arrow">
+        <input type="checkbox" id="deformchk2" name="attr_forgetchk2">
+        <div class="sheet-divider">
+
+          <input type="text" name="attr_fragmant2">
+          <input type="text" name="attr_deform2">
+        </div>
+        <label for="deformchk2" class="sheet-fragmant_chk"></label>
+      </div>
+      <div class="sheet-fragmant_inner">
+        <img src="https://imgur.com/Kp1vGGO.png" alt="arrow">
+        <input type="checkbox" id="deformchk3" name="attr_forgetchk3">
+        <div class="sheet-divider">
+
+          <input type="text" name="attr_fragmant3">
+          <input type="text" name="attr_deform3">
+        </div>
+        <label for="deformchk3" class="sheet-fragmant_chk"></label>
+      </div>
+      <input type="hidden" name="author" value="Seul&HoneyRain">
+      <div class="sheet-fragmant_inner">
+        <img src="https://imgur.com/Kp1vGGO.png" alt="arrow">
+        <input type="checkbox" id="deformchk4" name="attr_forgetchk4">
+        <div class="sheet-divider">
+          <input type="text" name="attr_fragmant4">
+          <input type="text" name="attr_deform4">
+        </div>
+        <label for="deformchk4" class="sheet-fragmant_chk"></label>
+      </div>
+      <div class="sheet-fragmant_inner">
+        <img src="https://imgur.com/Kp1vGGO.png" alt="arrow">
+        <input type="checkbox" id="deformchk5" name="attr_forgetchk5">
+        <div class="sheet-divider">
+
+          <input type="text" name="attr_fragmant5">
+          <input type="text" name="attr_deform5">
+        </div>
+        <label for="deformchk5" class="sheet-fragmant_chk"></label>
+      </div>
+      <div class="sheet-fragmant_inner">
+        <img src="https://imgur.com/Kp1vGGO.png" alt="arrow">
+        <input type="checkbox" id="deformchk6" name="attr_forgetchk6">
+        <div class="sheet-divider">
+
+          <input type="text" name="attr_fragmant6">
+          <input type="text" name="attr_deform6">
+        </div>
+        <label for="deformchk6" class="sheet-fragmant_chk"></label>
+      </div>
+
+    </div>
+    <div class="sheet-ect">
+      <div class="sheet-storyf">
+        <h3>스토리 프래그먼트</h3>
+        <textarea name="attr_storyf" class="text"></textarea>
+      </div>
+      <div class="sheet-memory">
+        <h3>소중한 추억</h3>
+        <textarea name="attr_memory" class="text"></textarea>
+      </div>
+      <div class="sheet-backstory">
+        <h3>설정</h3>
+        <textarea name="attr_backstory" class="text"></textarea>
+      </div>
+
+    </div>
+
+    <rolltemplate class="sheet-rolltemplate-binder">
+      <div class="sheet-container">
+        <div class="sheet-pcname"><span>{{name}}</span></div>
+        <div class="sheet-binderRoll">
+          <span><img src="https://imgur.com/Jt8hw3i.png" alt="roll_binder"></span>
+        </div>
+        <div class="sheet-depthRoll">
+          <span>이계 심도</span>
+          <span>/</span>
+          <span>{{depth}}</span>
+        </div>
+        <div class="sheet-rollB">
+          <span>{{r1}}</span>
+          <span class="plus"><img src="https://imgur.com/aoQVi3g.png" alt="+"></span>
+          <span>{{r2}}</span>
+        </div>
+        <div class="sheet-dsc">
+          <p>
+            주사위의 합이 <span>이계심도 이상</span>일 시 <span>성공</span>
+          </p>
+        </div>
+      </div>
+    </rolltemplate>
+
+    <rolltemplate class="sheet-rolltemplate-shifter">
+      <div class="sheet-container">
+        <div class="sheet-pcname"><span>{{name}}</span></div>
+        <div class="sheet-shifterRoll">
+          <span><img src="https://imgur.com/FFUXgYg.png" alt="roll_shifter"></span>
+        </div>
+        <div class="sheet-depthRoll">
+          <span>이계 심도</span>
+          <span>/</span>
+          <span>{{depth}}</span>
+        </div>
+        <div class="sheet-rollS">
+          <span>{{r1}}</span>
+        </div>
+        <div class="sheet-dsc">
+          <p>
+            주사위의 합이 <span>이계심도 이상</span>일 시 <span>성공</span>
+          </p>
+        </div>
+      </div>
+    </rolltemplate>
+
+    <rolltemplate class="sheet-rolltemplate-fragmant">
+      <div class="sheet-container">
+        <div class="sheet-pcname"><span>{{name}}</span></div>
+        <div class="sheet-fragmantRoll">
+          <span><img src="https://imgur.com/dcMRZ62.png" alt="roll_fragmant"></span>
+        </div>
+        <div class="sheet-object">
+          <span>효과 대상</span>
+          <span>/</span>
+          <span>{{object}}</span>
+        </div>
+        <div class="sheet-now">
+          <span>현재 수치</span>
+          <span>/</span>
+          <span>{{now}}</span>
+        </div>
+        <div class="sheet-dsc">
+          <p>
+            프래그먼트를 <span>{{numberF}}</span>개 차감하여 판정에 +<span>{{plusF}}</span>
+          </p>
+        </div>
+      </div>
+    </rolltemplate>
+
+    <rolltemplate class="sheet-rolltemplate-deform">
+      <div class="sheet-container">
+        <div class="sheet-pcname"><span>{{name}}</span></div>
+        <div class="sheet-deformRoll">
+          <span><img src="https://imgur.com/cfVWYGn.png" alt="roll_deform"></span>
+        </div>
+        <div class="sheet-now">
+          <span>남은 이계화 수</span>
+          <span>/</span>
+          <span>{{now}}</span>
+        </div>
+        <div class="sheet-dsc">
+          <p>
+            자신의 프래그먼트를 망각하고 <span>{{selectD}}</span>
+          </p>
+        </div>
+      </div>
+    </rolltemplate>
+
+
+  </div>
+
+</div>
+
+<script type="text/worker">
+
+  on("change:changer", function() {
+		getAttrs(["changer"], function(values) {
+      setAttrs({chk:values.changer});
+		});
+	});
+
+</script>
