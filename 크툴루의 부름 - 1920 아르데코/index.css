@@ -1,0 +1,975 @@
+@font-face {
+  font-family: 'HeirofLightRegular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/HeirofLightRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .inlinerollresult,
+.sheet-rolltemplate-coc_dice_roll_free .inlinerollresult,
+.sheet-rolltemplate-coc_dice_roll_mad .inlinerollresult,
+.sheet-rolltemplate-coc_dice_roll .inlinerollresult,
+.sheet-rolltemplate-coc_dice_roll_combat .inlinerollresult,
+.sheet-rolltemplate-coc_dice_roll_free .inlinerollresult.fullcrit,
+.sheet-rolltemplate-coc_dice_roll_free .inlinerollresult.importantroll,
+.sheet-rolltemplate-coc_dice_roll_free .inlinerollresult.fullfail,
+.sheet-rolltemplate-coc_dice_roll_b .inlinerollresult.fullcrit,
+.sheet-rolltemplate-coc_dice_roll_b .inlinerollresult.importantroll,
+.sheet-rolltemplate-coc_dice_roll_b .inlinerollresult.fullfail,
+.sheet-rolltemplate-coc_dice_roll_mad .inlinerollresult.fullcrit,
+.sheet-rolltemplate-coc_dice_roll_mad .inlinerollresult.importantroll,
+.sheet-rolltemplate-coc_dice_roll_mad .inlinerollresult.fullfail,
+.sheet-rolltemplate-coc_dice_roll .inlinerollresult .fullcrit,
+.sheet-rolltemplate-coc_dice_roll .inlinerollresult .importantroll,
+.sheet-rolltemplate-coc_dice_roll .inlinerollresult .fullfail,
+.sheet-rolltemplate-coc_dice_roll_combat .inlinerollresult .fullcrit,
+.sheet-rolltemplate-coc_dice_roll_combat .inlinerollresult .importantroll,
+.sheet-rolltemplate-coc_dice_roll_combat .inlinerollresult .fullfail {
+  background-color: transparent;
+  border: none;
+  padding: 0 3px 0 3px;
+  font-weight: bold;
+  cursor: help;
+  font-size: 1.1em;
+}
+
+.charsheet {
+  font-family: 'HeirofLightRegular', 'Hahmlet', sans-serif;
+}
+
+.charsheet input,
+.charsheet select {
+  font-family: 'Hahmlet', 'HeirofLightRegular', sans-serif;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  color: #bf7000;
+  appearance: none;
+}
+
+.sheet-outer {
+  width: 800px;
+  height: 1300px;
+  background: url(https://imgur.com/t01xyR5.png) no-repeat;
+}
+
+.sheet-ChkTheme[value='1']~.sheet-outer {
+  background-image: url(https://imgur.com/iqarz1x.png);
+}
+
+.sheet-bgChanger {
+  text-align: right;
+  z-index: 1;
+}
+
+label[for='bgchk'] {
+  display: inline-block;
+  width: 60px;
+  height: 170px;
+  background: url(https://imgur.com/f0S0nhk.png) no-repeat;
+}
+
+.sheet-ChkTheme[value='1']~.sheet-outer .sheet-bgChanger label[for='bgchk'] {
+  background: url(https://imgur.com/zIz8DE6.png) no-repeat;
+}
+
+.sheet-bgChanger>input {
+  display: none;
+}
+
+.sheet-row1 {
+  margin-top: -120px;
+  width: 700px;
+  margin-left: 50px;
+  z-index: 0;
+}
+
+.sheet-row1>div {
+  display: inline-block;
+  text-align: center;
+}
+
+.sheet-info {
+  width: 250px;
+  text-align: center;
+  transform: translateY(-10px);
+}
+
+.sheet-info>input:nth-child(1) {
+  color: #bf7000;
+  text-align-last: center;
+}
+
+.sheet-Cname {
+  width: 192px;
+  height: 95px;
+  display: inline-block;
+  background: url(https://imgur.com/w30fGNp.png) no-repeat;
+  text-align: center;
+}
+
+.sheet-Cname>input {
+  width: 190px;
+  margin-top: 30px;
+  font-size: 20px;
+  text-align-last: center;
+  color: white;
+}
+
+.sheet-ChkTheme[value='1']~.sheet-outer .sheet-row1 .sheet-info .sheet-Cname>input {
+  color: black;
+}
+
+.sheet-infoEct>input {
+  width: 60px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align-last: center;
+}
+
+.sheet-ChkTheme[value='1']~.sheet-outer .sheet-row1 .sheet-info .sheet-infoEct>input {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.sheet-stat {
+  width: 445px;
+  transform: translateX(-20px);
+  border-bottom: 1px solid #bf7000;
+}
+
+.sheet-stat>div {
+  display: inline-block;
+  width: 100px;
+  height: 70px;
+}
+
+.sheet-stat>div:nth-child(5),
+.sheet-stat>div:nth-child(6),
+.sheet-stat>div:nth-child(7),
+.sheet-stat>div:nth-child(8) {
+  margin-top: -15px;
+}
+
+.sheet-stat>div>input:nth-child(1) {
+  width: 60px;
+  font-size: 20px;
+  text-align-last: center;
+  color: white;
+  border-bottom: 1px solid #bf7000;
+}
+
+.sheet-ChkTheme[value='1']~.sheet-outer .sheet-row1 .sheet-stat>div>input:nth-child(1) {
+  color: black;
+}
+
+.sheet-stat>div span {
+  display: inline-block;
+  width: 60px;
+  text-align: center;
+  color: #bf7000;
+  font-weight: bold;
+  transform: translateY(-15px);
+}
+
+.sheet-stat>div label {
+  display: inline-block;
+}
+
+.sheet-stat>div>label:nth-child(3) {
+  width: 25px;
+  height: 25px;
+  background: url(https://imgur.com/EIQxGMf.png) no-repeat;
+  transform: translateY(20px);
+}
+
+.sheet-ChkTheme[value='1']~.sheet-outer .sheet-row1 .sheet-stat>div>label:nth-child(3) {
+  background-image: url(https://imgur.com/ukSFrvD.png);
+}
+
+.sheet-stat>div>button:nth-child(2):hover+label {
+  background-image: url(https://imgur.com/RiIHqSo.png);
+}
+
+.sheet-ChkTheme[value='1']~.sheet-outer .sheet-row1 .sheet-stat>div>button:nth-child(2):hover+label {
+  background-image: url(https://imgur.com/FlPFzBt.png);
+}
+
+.sheet-stat>div>label:nth-last-child(1) {
+  width: 25px;
+  height: 25px;
+  background: url(https://imgur.com/ZvngLzP.png) no-repeat;
+}
+
+.sheet-stat>div>button:nth-last-child(2):hover+label {
+  background-image: url(https://imgur.com/ZTJpkwn.png);
+}
+
+.sheet-stat>div>button {
+  display: none;
+}
+
+.sheet-row2 {
+  width: 700px;
+  text-align: center;
+}
+
+.sheet-row2>div {
+  display: inline-block;
+}
+
+.sheet-freeDice {
+  width: 200px;
+}
+
+.sheet-freeDice>input {
+  width: 120px;
+  color: #bf7000;
+  font-size: 15px;
+  text-align-last: center;
+  border-bottom: 1px solid #bf7000;
+  transform: translateY(-20px);
+}
+
+.sheet-freeDice>label {
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  background: url(https://imgur.com/vdBOw1l.png) no-repeat;
+  transform: translateY(20px) translateX(-5px);
+}
+
+.sheet-freeDice>button:hover+label {
+  background-image: url(https://imgur.com/qNQNmGO.png);
+}
+
+.sheet-freeDice>button {
+  display: none;
+}
+
+.sheet-move {
+  width: 126px;
+  height: 70px;
+  background: url(https://imgur.com/AL01n18.png) no-repeat;
+  transform: translateY(-6px);
+}
+
+.sheet-move>span {
+  display: block;
+  width: 126px;
+  margin-top: 10px;
+  color: #bf7000;
+  font-weight: bold;
+  text-align: center;
+}
+
+.sheet-move>input {
+  width: 60px;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  text-align-last: center;
+  transform: translateY(-5px);
+}
+
+.sheet-ChkTheme[value='1']~.sheet-outer .sheet-row2 .sheet-move>input {
+  color: black;
+}
+
+.sheet-DB {
+  width: 150px;
+}
+
+.sheet-DB>input {
+  width: 50px;
+  border-bottom: 1px solid #bf7000;
+  text-align-last: center;
+  transform: translateY(-15px);
+}
+
+.sheet-row3 {
+  display: inline-block;
+  width: 800px;
+  margin-left: -50px;
+}
+
+.sheet-row3>div {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.sheet-infoDown {
+  width: 300px;
+  height: 104px;
+  text-align: center;
+  background: url(https://imgur.com/aA0eKa8.png) no-repeat;
+  position: relative;
+  padding-left: 7px;
+}
+
+.sheet-infoDown * {
+  color: #bf7000;
+}
+
+.sheet-infoDown>div {
+  display: inline-block;
+  width: 80px;
+  margin: 0;
+  float: left;
+  padding-left: 5px;
+  transform: translateY(35px);
+}
+
+.sheet-infoDown>div input {
+  width: 30px;
+  text-align-last: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.sheet-hp_n {
+  padding-left: 17px !important;
+}
+
+.sheet-HPchkbox {
+  width: 120px !important;
+}
+
+.sheet-HPchkbox label {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  font-size: 6px;
+  font-weight: normal;
+  color: white;
+  text-align: center;
+  line-height: 22px;
+  transform: translateY(-10px);
+}
+
+.sheet-HPchkbox label:nth-child(2) {
+  background: url(https://imgur.com/pIhSCk6.png) no-repeat;
+  margin-right: 30px;
+}
+
+.sheet-HPchkbox input:nth-child(1):checked+label {
+  background-image: url(https://imgur.com/hy7Qm8P.png);
+}
+
+.sheet-HPchkbox label:nth-child(4) {
+  background: url(https://imgur.com/bnmIt55.png) no-repeat;
+}
+
+.sheet-HPchkbox input:nth-child(3):checked+label {
+  background-image: url(https://imgur.com/w36mqAQ.png);
+}
+
+.sheet-HPchkbox input {
+  display: none;
+}
+
+.sheet-lukRoll {
+  width: 120px !important;
+  margin-left: 40px !important;
+  transform: translateY(25px) !important;
+}
+
+.sheet-lukRoll label:nth-child(2) {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: url(https://imgur.com/EIQxGMf.png) no-repeat;
+}
+
+.sheet-ChkTheme[value='1']~.sheet-outer .sheet-row3 .sheet-infoDown .sheet-lukRoll label:nth-child(2) {
+  background-image: url(https://imgur.com/ukSFrvD.png);
+}
+
+.sheet-lukRoll button:nth-child(1):hover+label {
+  background-image: url(https://imgur.com/RiIHqSo.png);
+}
+
+.sheet-ChkTheme[value='1']~.sheet-outer .sheet-row3 .sheet-infoDown .sheet-lukRoll button:nth-child(1):hover+label {
+  background-image: url(https://imgur.com/FlPFzBt.png);
+}
+
+.sheet-lukRoll label:nth-child(4) {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-left: 30px;
+  background: url(https://imgur.com/ZvngLzP.png) no-repeat;
+}
+
+.sheet-lukRoll button:nth-child(3):hover+label {
+  background-image: url(https://imgur.com/ZTJpkwn.png);
+}
+
+.sheet-lukRoll button {
+  display: none;
+}
+
+.sheet-SAN {
+  width: 450px;
+  height: 104px;
+  background: url(https://imgur.com/VjhYcA1.png) no-repeat;
+}
+
+.sheet-ChkTheme[value='1']~.sheet-outer .sheet-row3 .sheet-SAN {
+  background-image: url(https://imgur.com/i5Jr7H2.png);
+}
+
+.sheet-SAN input[type='text'] {
+  width: 80px;
+  font-size: 20px;
+  text-align-last: center;
+  margin-top: 26px;
+}
+
+.sheet-SAN input:nth-child(4) {
+  color: white;
+  font-weight: bold;
+}
+
+.sheet-ChkTheme[value='1']~.sheet-outer .sheet-row3 .sheet-SAN input:nth-child(4) {
+  color: black;
+}
+
+.sheet-SAN label {
+  display: inline-block;
+}
+
+.sheet-SAN>label:nth-child(3),
+.sheet-SAN>label:nth-child(6) {
+  width: 38px;
+  height: 38px;
+  background-repeat: no-repeat;
+  transform: translateY(15px);
+}
+
+.sheet-SAN>label {
+  background-image: url(https://imgur.com/ya8LAxx.png);
+  text-align: center;
+  line-height: 35px;
+  color: white;
+  font-size: 10px;
+}
+
+.sheet-SAN>input:checked+label {
+  background-image: url(https://imgur.com/stPsNw7.png);
+}
+
+.sheet-SAN>input[type='checkbox'] {
+  display: none;
+}
+
+.sheet-SAN_b {
+  display: inline-block;
+  padding-left: 180px;
+  transform: translateX(-15px) translateY(6px);
+}
+
+.sheet-SAN_b>label:nth-child(2) {
+  width: 25px;
+  height: 25px;
+  background: url(https://imgur.com/EIQxGMf.png) no-repeat;
+}
+
+.sheet-ChkTheme[value='1']~.sheet-outer .sheet-row3 .sheet-SAN .sheet-SAN_b label:nth-child(2) {
+  background-image: url(https://imgur.com/ukSFrvD.png);
+}
+
+.sheet-SAN_b>button:nth-child(1):hover+label {
+  background-image: url(https://imgur.com/RiIHqSo.png);
+}
+
+.sheet-ChkTheme[value='1']~.sheet-outer .sheet-row3 .sheet-SAN .sheet-SAN_b>button:nth-child(1):hover+label {
+  background-image: url(https://imgur.com/FlPFzBt.png);
+}
+
+.sheet-SAN_b>label:nth-child(4) {
+  margin-left: -10px;
+  width: 25px;
+  height: 25px;
+  background: url(https://imgur.com/ZvngLzP.png) no-repeat;
+}
+
+.sheet-SAN_b>button:nth-child(3):hover+label {
+  background-image: url(https://imgur.com/ZTJpkwn.png);
+}
+
+.sheet-SAN_b>button {
+  display: none;
+}
+
+.sheet-mad {
+  display: inline-block;
+  width: 100px;
+  transform: translateY(-12px);
+  padding-left: 35px;
+}
+
+.sheet-mad label {
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  background: url(https://imgur.com/ya8LAxx.png) no-repeat;
+  font-size: 10px;
+  line-height: 35px;
+  color: white;
+  text-align: center;
+}
+
+.sheet-mad button:hover+label {
+  background-image: url(https://imgur.com/stPsNw7.png);
+}
+
+.sheet-mad label:nth-child(4) {
+  margin-left: -10px;
+}
+
+.sheet-mad button {
+  display: none;
+}
+
+.sheet-skillTitle {
+  display: inline-block;
+  width: 734px;
+  height: 64px;
+  background: url(https://imgur.com/gx28B3k.png) no-repeat;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.sheet-skillTitle>select {
+  display: inline-block;
+  text-align-last: center;
+  color: black;
+  font-weight: bold;
+  width: 60px;
+  margin-top: 20px;
+  margin-left: 5px;
+}
+
+.sheet-ChkTheme[value='1']~.sheet-outer .sheet-row4 .sheet-skillTitle>select {
+  color: white;
+}
+
+.sheet-ChkTheme[value='1']~.sheet-outer .sheet-row4 .sheet-skillTitle>select>option {
+  color: black;
+}
+
+.sheet-row4 {
+  display: inline-block;
+  width: 800px;
+  text-align: center;
+  margin-left: -45px;
+}
+
+.sheet-row4>div:not(.sheet-skillTitle) {
+  display: none;
+}
+
+.sheet-Chkmenu[value='1']~.sheet-outer .sheet-row4 .sheet-skillContents,
+.sheet-Chkmenu[value='2']~.sheet-outer .sheet-row4 .sheet-combat,
+.sheet-Chkmenu[value='3']~.sheet-outer .sheet-row4 .sheet-backstory {
+  display: block;
+}
+
+.sheet-skillContents>div {
+  display: inline-block;
+  width: 235px;
+  text-align: center;
+}
+
+.sheet-skillContents>div:nth-child(3) {
+  transform: translateY(5px);
+}
+
+.sheet-skillContents>div>div {
+  margin-top: -10px;
+}
+
+.sheet-skillContents>div>div>span {
+  display: inline-block;
+  width: 120px;
+  color: white;
+  text-align: left;
+}
+
+.sheet-ChkTheme[value='1']~.sheet-outer .sheet-row4 .sheet-skillContents>div>div>span {
+  color: black;
+}
+
+.sheet-skillContents>div>div>input:nth-child(1) {
+  width: 120px;
+  color: white;
+  text-align: left;
+  border-bottom: 1px solid #bf7000;
+  border-radius: 0;
+}
+
+.sheet-ChkTheme[value='1']~.sheet-outer .sheet-row4 .sheet-skillContents>div>div>input:nth-child(1) {
+  color: black;
+}
+
+.sheet-skillContents>div>div>input:nth-child(2) {
+  width: 40px;
+  text-align-last: center;
+  color: white;
+  background: #bf7000;
+  border-radius: 10px;
+}
+
+.sheet-skillContents>div>div>label {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  transform: translateY(20px);
+}
+
+.sheet-skillContents>div>div>label:nth-child(4) {
+  background-image: url(https://imgur.com/EIQxGMf.png);
+}
+
+.sheet-ChkTheme[value='1']~.sheet-outer .sheet-row4 .sheet-skillContents>div>div>label:nth-child(4) {
+  background-image: url(https://imgur.com/ukSFrvD.png);
+}
+
+.sheet-skillContents>div>div>button:nth-child(3):hover+label {
+  background-image: url(https://imgur.com/RiIHqSo.png);
+}
+
+.sheet-ChkTheme[value='1']~.sheet-outer .sheet-row4 .sheet-skillContents>div>div>button:nth-child(3):hover+label {
+  background-image: url(https://imgur.com/FlPFzBt.png);
+}
+
+.sheet-skillContents>div>div>label:nth-child(6) {
+  margin-left: -13px;
+  background-image: url(https://imgur.com/ZvngLzP.png);
+}
+
+.sheet-skillContents>div>div>button:nth-child(5):hover+label {
+  background-image: url(https://imgur.com/ZTJpkwn.png);
+}
+
+.sheet-skillContents>div>div>button {
+  display: none;
+}
+
+.sheet-combat {
+  display: inline-block;
+  width: 700px;
+  padding-left: 50px;
+  margin-left: -5px;
+}
+
+.sheet-combat>div {
+  border-bottom: 1px solid #bf7000;
+}
+
+.sheet-combat>div input[type='text'] {
+  display: inline-block;
+  width: 60px;
+  text-align-last: center;
+}
+
+.sheet-combat>div select {
+  width: 80px;
+  text-align-last: center;
+}
+
+.sheet-combat>div label {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  transform: translateY(20px);
+}
+
+.sheet-combat>div>input:nth-child(1) {
+  width: 100px;
+}
+
+.sheet-combat>div>select:nth-child(10) {
+  width: 60px;
+}
+
+.sheet-combat>div>label:nth-child(3) {
+  background-image: url(https://imgur.com/EIQxGMf.png);
+}
+
+.sheet-ChkTheme[value='1']~.sheet-outer .sheet-row4 .sheet-combat>div>label:nth-child(3) {
+  background-image: url(https://imgur.com/ukSFrvD.png);
+}
+
+.sheet-combat>div>button:nth-child(2):hover+label {
+  background-image: url(https://imgur.com/RiIHqSo.png);
+}
+
+.sheet-ChkTheme[value='1']~.sheet-outer .sheet-row4 .sheet-combat>div>button:nth-child(2):hover+label {
+  background-image: url(https://imgur.com/FlPFzBt.png);
+}
+
+.sheet-combat>div>label:nth-child(5) {
+  margin-left: -10px;
+  background-image: url(https://imgur.com/ZvngLzP.png);
+}
+
+.sheet-combat>div>button:nth-child(4):hover+label {
+  background-image: url(https://imgur.com/ZTJpkwn.png);
+}
+
+.sheet-combat>div button {
+  display: none;
+}
+
+.sheet-backstory {
+  margin-left: -25px;
+}
+
+.sheet-backstory>div {
+  display: inline-block;
+  margin-left: 25px;
+}
+
+.sheet-backstory>div>span {
+  color: #bf7000;
+  font-weight: bold;
+}
+
+.sheet-backstory>div>div>textarea {
+  width: 280px;
+  height: 80px;
+  background: transparent;
+  padding: 10px;
+  color: white;
+  border: 1px solid #bf7000;
+  resize: none;
+}
+
+.sheet-ChkTheme[value='1']~.sheet-outer .sheet-row4 .sheet-backstory>div>div>textarea {
+  color: black;
+}
+
+.sheet-rolltemplate-coc_dice_roll_free {
+  width: 220px;
+  height: 250px;
+  background: url(https://imgur.com/fFn1cL0.png) no-repeat;
+  text-align: center;
+  border: 3px double #bf7000;
+}
+
+.sheet-rolltemplate-coc_dice_roll_combat {
+  width: 220px;
+  height: 270px;
+  background: url(https://imgur.com/y0EF29V.png) no-repeat;
+  color: #fff;
+  text-align: center;
+}
+
+.sheet-rolltemplate-coc_dice_roll_free>table,
+.sheet-rolltemplate-coc_dice_roll_mad>table,
+.sheet-rolltemplate-coc_dice_roll_combat>table {
+  width: 220px;
+  text-align-last: center;
+}
+
+.sheet-rolltemplate-coc_dice_roll_free>table>caption,
+.sheet-rolltemplate-coc_dice_roll_mad>table>caption,
+.sheet-rolltemplate-coc_dice_roll_b .sheet-caption td,
+.sheet-rolltemplate-coc_dice_roll table caption,
+.sheet-rolltemplate-coc_dice_roll_combat table caption {
+  font-size: 20px;
+  color: #bf7000;
+  font-weight: bold;
+  padding: 20px 0;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.sheet-rolltemplate-coc_dice_roll_mad>table>caption {
+  padding-bottom: 40px;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b tr:nth-child(1) td {
+  padding-top: 70px;
+  padding-bottom: 40px;
+}
+
+.sheet-rolltemplate-coc_dice_roll table caption {
+  margin-bottom: 20px;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-caption td {
+  padding-top: 50px;
+}
+
+.sheet-rolltemplate-coc_dice_roll_free .sheet-template_label {
+  font-weight: bold;
+  padding: 5px 0;
+  color: #fff;
+}
+
+.sheet-rolltemplate-coc_dice_roll_free .sheet-template_value {
+  width: 130px;
+  padding: 5px 0;
+  color: #fff;
+}
+
+.sheet-rolltemplate-coc_dice_roll_free table tr:nth-last-child(1) td:nth-last-child(1) {
+  font-size: 35px;
+  color: #bf7000;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  padding: 10px 0;
+  padding-top: 25px;
+}
+
+.sheet-rolltemplate-coc_dice_roll_mad {
+  width: 220px;
+  height: 400px;
+  background: url(https://imgur.com/c2FTno2.png) no-repeat;
+  color: #fff;
+  text-align: center;
+}
+
+.sheet-rolltemplate-coc_dice_roll_mad table {
+  width: 200px;
+  margin: 0 10px;
+}
+
+.sheet-rolltemplate-coc_dice_roll_mad table tr:nth-child(1) td {
+  width: 80px;
+  text-align: left;
+}
+.sheet-rolltemplate-coc_dice_roll_mad table tr:nth-child(1) td:nth-child(1) {
+  padding-left: 20px;
+}
+.sheet-rolltemplate-coc_dice_roll_mad table tr:nth-last-child(1) td {
+  vertical-align: middle !important;
+  height: 200px;
+}
+
+.sheet-rolltemplate-coc_dice_roll_mad table tr:nth-last-child(1) td div strong {
+  padding-bottom: 10px;
+  display: block;
+  font-size: 20px;
+  color: #bf7000;
+}
+
+.sheet-rolltemplate-coc_dice_roll_mad table tr:nth-last-child(1) td div {
+  display: inline-block;
+  padding: 10px;
+}
+
+.sheet-rolltemplate-coc_dice_roll_mad table tr:nth-last-child(1) td div p {
+  color: #000;
+  margin: 10px;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b {
+  width: 220px;
+  height: 400px;
+  background: url(https://imgur.com/dgE5BZH.png) no-repeat;
+  color: #fff;
+  text-align: center;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b>table,
+.sheet-rolltemplate-coc_dice_roll>table {
+  width: 220px;
+  text-align: center;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b table tr td,
+.sheet-rolltemplate-coc_dice_roll table tr td,
+.sheet-rolltemplate-coc_dice_roll_combat table tr td {
+  width: auto;
+  height: 20px;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b table tr td {
+  color: black;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-template_label {
+  font-weight: bold;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-template_value_fumble,
+.sheet-rolltemplate-coc_dice_roll .sheet-template_value_fumble,
+.sheet-rolltemplate-coc_dice_roll_combat .sheet-template_value_fumble {
+  color: white;
+  background: rgb(255, 0, 42);
+  background: radial-gradient(circle, rgba(255, 0, 42, 1) 0%, rgba(255, 0, 42, 1) 80%, rgba(255, 0, 42, 0) 100%);
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-template_value_fail,
+.sheet-rolltemplate-coc_dice_roll .sheet-template_value_fail,
+.sheet-rolltemplate-coc_dice_roll_combat .sheet-template_value_fail {
+  padding: 2px;
+  color: white;
+  background: rgb(125, 0, 0);
+  background: radial-gradient(circle, rgba(125, 0, 0, 1) 0%, rgba(125, 0, 0, 1) 80%, rgba(84, 0, 0, 0) 100%);
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-template_value_success,
+.sheet-rolltemplate-coc_dice_roll .sheet-template_value_success,
+.sheet-rolltemplate-coc_dice_roll_combat .sheet-template_value_success {
+  padding: 2px;
+  color: white;
+  background: rgb(21, 105, 96);
+  background: radial-gradient(circle, rgba(21, 105, 96, 1) 0%, rgba(21, 105, 96, 1) 80%, rgba(21, 105, 96, 0) 100%);
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-template_value_hard,
+.sheet-rolltemplate-coc_dice_roll .sheet-template_value_hard,
+.sheet-rolltemplate-coc_dice_roll_combat .sheet-template_value_hard {
+  color: white;
+  background: rgb(82, 153, 78);
+  background: radial-gradient(circle, rgba(82, 153, 78, 1) 0%, rgba(82, 153, 78, 1) 80%, rgba(82, 153, 78, 0) 100%);
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-template_value_extreme,
+.sheet-rolltemplate-coc_dice_roll .sheet-template_value_extreme,
+.sheet-rolltemplate-coc_dice_roll_combat .sheet-template_value_extreme {
+  padding: 2px;
+  color: white;
+  background: rgb(62, 192, 181);
+  background: radial-gradient(circle, rgba(62, 192, 181, 1) 0%, rgba(62, 192, 181, 1) 80%, rgba(62, 192, 181, 0) 100%);
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-template_value_critical,
+.sheet-rolltemplate-coc_dice_roll .sheet-template_value_critical,
+.sheet-rolltemplate-coc_dice_roll_combat .sheet-template_value_critical {
+  padding: 2px;
+  color: white;
+  background: rgb(104, 185, 0);
+  background: radial-gradient(circle, rgba(104, 185, 0, 1) 0%, rgba(104, 185, 0, 1) 80%, rgba(104, 185, 0, 0) 100%);
+}
+
+.sheet-rolltemplate-coc_dice_roll {
+  width: 220px;
+  height: 250px;
+  background: url(https://imgur.com/fFn1cL0.png) no-repeat;
+  color: #fff;
+  text-align: center;
+}
+
+.sheet-rolltemplate-coc_dice_roll>table tr>td:nth-child(1),
+.sheet-rolltemplate-coc_dice_roll_combat>table tr>td:nth-child(1) {
+  width: 50px;
+  text-align: left;
+  padding-left: 30px;
+}
+
+.sheet-rolltemplate-coc_dice_roll_combat>table tr:nth-child(5) td {
+  padding: 0;
+}
+
+.sheet-rolltemplate-coc_dice_roll>table tr:nth-last-child(1) td,
+.sheet-rolltemplate-coc_dice_roll_combat>table tr:nth-last-child(2) td {
+  text-align: center;
+  padding: 0;
+}

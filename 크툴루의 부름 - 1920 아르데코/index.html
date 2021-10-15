@@ -1,0 +1,2385 @@
+<!-- sheet -->
+<input type="hidden" name="attr_chk_theme1" class="sheet-ChkTheme" value="" />
+<input type="hidden" name="attr_chk_menu" class="sheet-Chkmenu" value="1" />
+
+<div class="sheet-outer">
+
+  <div class="sheet-bgChanger">
+    <input type="checkbox" id="bgchk" name="attr_bg" value="1">
+    <label for="bgchk"></label>
+  </div>
+
+  <div class="sheet-row1">
+
+    <div class="sheet-info">
+      <input type="text" placeholder="플레이어 이름" name="attr_PName">
+      <div class="sheet-Cname">
+        <input type="text" name="attr_character_name" placeholder="캐릭터 이름">
+      </div>
+      <div class="sheet-infoEct">
+        <input type="text" placeholder="나이" name="attr_age">
+        <span>-</span>
+        <input type="text" placeholder="성별" name="attr_gender">
+        <span>-</span>
+        <input type="text" placeholder="직업" name="attr_ocp">
+      </div>
+    </div>
+
+    <div class="sheet-stat">
+      <div class="sheet-STR">
+        <input type="text" name="attr_STR" value="50">
+        <!-- 일반 -->
+        <!-- reference: https://github.com/Roll20/roll20-character-sheets/blob/729d1f19adcc365b1519f2c23923170bd98e1ed6/Call_of_Cthulhu_7th_Ed/coc_7th_ed.html#L196 -->
+        <button type="roll" id="stat-str" value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=근력}} {{success=[[@{str}]]}} {{hard=[[floor(@{str}/2)]]}} {{extreme=[[floor(@{str}/5)]]}} {{r1=[[1d100]]}}"></button>
+        <label for="stat-str"></label>
+        <span>근력</span>
+        <!-- 보너스주사위 -->
+        <button type="roll" id="stat-str_bonus" class="sheet-bonus"
+          value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=근력}} {{success=[[@{str}]]}} {{hard=[[floor(@{str}/2)]]}} {{extreme=[[floor(@{str}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+        <label for="stat-str_bonus" class="sheet-bonus"></label>
+      </div>
+      <div class="sheet-DEX">
+        <input type="text" name="attr_DEX" value="50">
+        <!-- 일반 -->
+        <button type="roll" id="stat-dex" value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=민첩}} {{success=[[@{dex}]]}} {{hard=[[floor(@{dex}/2)]]}} {{extreme=[[floor(@{dex}/5)]]}} {{r1=[[1d100]]}}"></button>
+        <label for="stat-dex"></label>
+        <span>민첩</span>
+        <!-- 보너스주사위 -->
+        <button type="roll" id="stat-dex_bonus" class="sheet-bonus"
+          value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=민첩}} {{success=[[@{dex}]]}} {{hard=[[floor(@{dex}/2)]]}} {{extreme=[[floor(@{dex}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+        <label for="stat-dex_bonus" class="sheet-bonus"></label>
+      </div>
+      <div class="sheet-POW">
+        <input type="text" name="attr_POW" value="50">
+        <!-- 일반 -->
+        <button type="roll" id="stat-pow" value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=정신}} {{success=[[@{pow}]]}} {{hard=[[floor(@{pow}/2)]]}} {{extreme=[[floor(@{pow}/5)]]}} {{r1=[[1d100]]}}"></button>
+        <label for="stat-pow"></label>
+        <span>정신</span>
+        <!-- 보너스주사위 -->
+        <button type="roll" id="stat-pow_bonus" class="sheet-bonus"
+          value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=정신}} {{success=[[@{pow}]]}} {{hard=[[floor(@{pow}/2)]]}} {{extreme=[[floor(@{pow}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+        <label for="stat-pow_bonus" class="sheet-bonus"></label>
+      </div>
+      <div class="sheet-CON">
+        <input type="text" name="attr_CON" value="50">
+        <!-- 일반 -->
+        <button type="roll" id="stat-con" value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=건강}} {{success=[[@{con}]]}} {{hard=[[floor(@{con}/2)]]}} {{extreme=[[floor(@{con}/5)]]}} {{r1=[[1d100]]}}"></button>
+        <label for="stat-con"></label>
+        <span>건강</span>
+        <!-- 보너스주사위 -->
+        <button type="roll" id="stat-con_bonus" class="sheet-bonus"
+          value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=건강}} {{success=[[@{con}]]}} {{hard=[[floor(@{con}/2)]]}} {{extreme=[[floor(@{con}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+        <label for="stat-con_bonus" class="sheet-bonus"></label>
+      </div>
+      <div class="sheet-APP">
+        <input type="text" name="attr_APP" value="50">
+        <!-- 일반 -->
+        <button type="roll" id="stat-app" value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=매력}} {{success=[[@{app}]]}} {{hard=[[floor(@{app}/2)]]}} {{extreme=[[floor(@{app}/5)]]}} {{r1=[[1d100]]}}"></button>
+        <label for="stat-app"></label>
+        <span>매력</span>
+        <!-- 보너스주사위 -->
+        <button type="roll" id="stat-app_bonus" class="sheet-bonus"
+          value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=매력}} {{success=[[@{app}]]}} {{hard=[[floor(@{app}/2)]]}} {{extreme=[[floor(@{app}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+        <label for="stat-app_bonus" class="sheet-bonus"></label>
+      </div>
+      <div class="sheet-EDU">
+        <input type="text" name="attr_EDU" value="50">
+        <!-- 일반 -->
+        <button type="roll" id="stat-edu" value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=교육}} {{success=[[@{edu}]]}} {{hard=[[floor(@{edu}/2)]]}} {{extreme=[[floor(@{edu}/5)]]}} {{r1=[[1d100]]}}"></button>
+        <label for="stat-edu"></label>
+        <span>교육</span>
+        <!-- 보너스주사위 -->
+        <button type="roll" id="stat-edu_bonus" class="sheet-bonus"
+          value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=교육}} {{success=[[@{edu}]]}} {{hard=[[floor(@{edu}/2)]]}} {{extreme=[[floor(@{edu}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+        <label for="stat-edu_bonus" class="sheet-bonus"></label>
+      </div>
+      <div class="sheet-SIZ">
+        <input type="text" name="attr_SIZ" value="50">
+        <!-- 일반 -->
+        <button type="roll" id="stat-siz" value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=크기}} {{success=[[@{siz}]]}} {{hard=[[floor(@{siz}/2)]]}} {{extreme=[[floor(@{siz}/5)]]}} {{r1=[[1d100]]}}"></button>
+        <label for="stat-siz"></label>
+        <span>크기</span>
+        <!-- 보너스주사위 -->
+        <button type="roll" id="stat-siz_bonus" class="sheet-bonus"
+          value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=크기}} {{success=[[@{siz}]]}} {{hard=[[floor(@{siz}/2)]]}} {{extreme=[[floor(@{siz}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+        <label for="stat-siz_bonus" class="sheet-bonus"></label>
+      </div>
+      <div class="sheet-INT">
+        <input type="text" name="attr_INT" value="50">
+        <!-- 일반 -->
+        <button type="roll" id="stat-int" value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=지능}} {{success=[[@{int}]]}} {{hard=[[floor(@{int}/2)]]}} {{extreme=[[floor(@{int}/5)]]}} {{r1=[[1d100]]}}"></button>
+        <label for="stat-int"></label>
+        <span>지능</span>
+        <!-- 보너스주사위 -->
+        <button type="roll" id="stat-int_bonus" class="sheet-bonus"
+          value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=지능}} {{success=[[@{int}]]}} {{hard=[[floor(@{int}/2)]]}} {{extreme=[[floor(@{int}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+        <label for="stat-int_bonus" class="sheet-bonus"></label>
+      </div>
+
+    </div>
+
+    <div class="sheet-row2">
+
+      <div class="sheet-freeDice">
+        <input type="text" name="attr_freeDice" value="1D100">
+        <button type="roll" id="freeDice" value="&{template:coc_dice_roll_free} {{character_name=@{character_name}}} {{r1=[[@{freeDice}]]}}"></button>
+        <label for="freeDice"></label>
+      </div>
+
+      <img src="https://imgur.com/Z2gGJtz.png" alt="logo">
+
+      <div class="sheet-move">
+        <span>이동력</span>
+        <input type="hidden" name="attr_moveHolder" value="7">
+        <input type="text" name="attr_move" value="@{moveHolder}" disabled>
+      </div>
+
+      <div class="sheet-DB">
+        <input type="text" name="attr_db" value="0" readonly>
+        <img src="https://imgur.com/1hStXN5.png" alt="DB_title">
+        <!-- 이동력처럼 hidden holder를 쓰면 1D4가 14 로 보이는 버그가 있어 readonly로 바꿔 사용함 -->
+        <input type="text" name="attr_build" value="0" readonly>
+      </div>
+
+    </div>
+
+    <div class="sheet-row3">
+
+      <div class="sheet-infoDown">
+        <div class="sheet-hp_n">
+          <input type="text" name="attr_hp_Now" value="0">
+          <span>/</span>
+          <input type="text" name="attr_hp_Max" value="" readonly>
+          <span>체력</span>
+        </div>
+        <div class="sheet-mp">
+          <div class="sheet-N">
+            <div class="sheet-mp_n">
+              <input type="text" name="attr_mp_Now" value="0">
+              <span>/</span>
+              <input type="text" name="attr_mp_Max" value="0" readonly>
+            </div>
+            <span>마력</span>
+          </div>
+        </div>
+        <div class="sheet-luk">
+          <div class="sheet-N">
+            <input type="text" name="attr_luk" value="0" placeholder="행운수치">
+          </div>
+          <span class="lukTitle">행운</span>
+        </div>
+        <div class="sheet-HPchkbox">
+          <!-- 부상 -->
+          <input type="checkbox" id="checkbox1">
+          <label for="checkbox1"></label>
+          <!-- 중상 -->
+          <input type="checkbox" id="checkbox2">
+          <label for="checkbox2"></label>
+        </div>
+        <div class="sheet-lukRoll">
+          <button type="roll" id="luk_roll" value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=행운}} {{success=[[@{luk}]]}} {{hard=[[floor(@{luk}/2)]]}} {{extreme=[[floor(@{luk}/5)]]}} {{r1=[[1d100]]}}"></button>
+          <label for="luk_roll"></label>
+          <button type="roll" id="luk_bonus"
+            value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=행운}} {{success=[[@{luk}]]}} {{hard=[[floor(@{luk}/2)]]}} {{extreme=[[floor(@{luk}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+          <label for="luk_bonus"></label>
+        </div>
+      </div>
+
+      <div class="sheet-SAN">
+        <input type="text" name="attr_san1st" value="0" readonly>
+        <!-- 일시광기 -->
+        <input type="checkbox" id="checkbox3">
+        <label for="checkbox3">일시</label>
+        <input type="text" name="attr_sanNow" value="0" placeholder="현재이성">
+        <!-- 장기광기 -->
+        <input type="checkbox" id="checkbox4">
+        <label for="checkbox4">장기</label>
+        <input type="text" name="attr_sanMax" value="99">
+
+        <div class="sheet-SAN_b">
+          <!-- 일반 -->
+          <button type="roll" id="san_btn"
+            value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=이성}} {{success=[[@{sanNow}]]}} {{hard=[[floor(@{sanNow}/2)]]}} {{extreme=[[floor(@{sanNow}/5)]]}} {{r1=[[1d100]]}}"></button>
+          <label for="san_btn"></label>
+          <!-- 보너스주사위 -->
+          <button type="roll" id="san_btn_bonus"
+            value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=이성}} {{success=[[@{sanNow}]]}} {{hard=[[floor(@{sanNow}/2)]]}} {{extreme=[[floor(@{sanNow}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+          <label for="san_btn_bonus"></label>
+        </div>
+
+        <div class="sheet-mad">
+          <!-- 실시간 -->
+          <button type="roll" id="realtime" value="&{template:coc_dice_roll_mad} {{character_name=@{character_name}}} {{madness_type=[[1]]}}{{rand_roll=[[1d10]]}}{{rand_roll2=[[1D10]]}}"></button>
+          <label for="realtime">실시간</label>
+          <!-- 요약 -->
+          <button type="roll" id="short" value="&{template:coc_dice_roll_mad} {{character_name=@{character_name}}} {{madness_type=[[2]]}}{{rand_roll=[[1d10]]}}{{rand_roll2=[[1D10]]}}"></button>
+          <label for="short">요약</label>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="sheet-row4">
+
+      <div class="sheet-skillTitle">
+        <select class="sheet-changer" name="attr_changer">
+          <option value="1">기능</option>
+          <option value="2">무기</option>
+          <option value="3">배경</option>
+        </select>
+      </div>
+
+      <div class="sheet-skillContents">
+        <div class="sheet-cal1">
+          <div class="sheet-skill01">
+            <span>감정(05%)</span>
+            <input type="text" name="attr_valuation" value="5">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_01"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=감정}} {{success=[[@{valuation}]]}} {{hard=[[floor(@{valuation}/2)]]}} {{extreme=[[floor(@{valuation}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_01"></label>
+            <!-- 보너스주사위 -->
+            <button type="roll" id="skill_bonus_01"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=감정}} {{success=[[@{valuation}]]}} {{hard=[[floor(@{valuation}/2)]]}} {{extreme=[[floor(@{valuation}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_01"></label>
+          </div>
+          <div class="sheet-skill02">
+            <span>고고학(01%)</span>
+            <input type="text" name="attr_archeology" value="1">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_02"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=고고학}} {{success=[[@{archeology}]]}} {{hard=[[floor(@{archeology}/2)]]}} {{extreme=[[floor(@{archeology}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_02"></label>
+            <!-- 보너스주사위 -->
+            <button type="roll" id="skill_bonus_02"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=고고학}} {{success=[[@{archeology}]]}} {{hard=[[floor(@{archeology}/2)]]}} {{extreme=[[floor(@{archeology}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_02"></label>
+          </div>
+          <div class="sheet-skill03">
+            <span>관찰력(25%)</span>
+            <input type="text" name="attr_observation" value="25">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_03"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=관찰력}} {{success=[[@{observation}]]}} {{hard=[[floor(@{observation}/2)]]}} {{extreme=[[floor(@{observation}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_03"></label>
+            <!-- 보너스주사위 -->
+            <button type="roll" id="skill_bonus_03"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=관찰력}} {{success=[[@{observation}]]}} {{hard=[[floor(@{observation}/2)]]}} {{extreme=[[floor(@{observation}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_03"></label>
+          </div>
+          <div class="sheet-skill04">
+            <span>근접전(격)(25%)</span>
+            <input type="text" name="attr_grapple" value="25">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_04"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=근접전(격)}} {{success=[[@{grapple}]]}} {{hard=[[floor(@{grapple}/2)]]}} {{extreme=[[floor(@{grapple}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_04"></label>
+            <!-- 보너스주사위 -->
+            <button type="roll" id="skill_bonus_04"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=근접전(격)}} {{success=[[@{grapple}]]}} {{hard=[[floor(@{grapple}/2)]]}} {{extreme=[[floor(@{grapple}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_04"></label>
+          </div>
+          <div class="sheet-skill05">
+            <span>기계수리(10%)</span>
+            <input type="text" name="attr_mechrepair" value="10">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_05"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=기계수리}} {{success=[[@{mechrepair}]]}} {{hard=[[floor(@{mechrepair}/2)]]}} {{extreme=[[floor(@{mechrepair}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_05"></label>
+            <!-- 보너스주사위 -->
+            <button type="roll" id="skill_bonus_05"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=기계수리}} {{success=[[@{mechrepair}]]}} {{hard=[[floor(@{mechrepair}/2)]]}} {{extreme=[[floor(@{mechrepair}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_05"></label>
+          </div>
+          <div class="sheet-skill006">
+            <span>도약(20%)</span>
+            <input type="text" name="attr_leap" value="20">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_06"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=도약}} {{success=[[@{leap}]]}} {{hard=[[floor(@{leap}/2)]]}} {{extreme=[[floor(@{leap}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_06"></label>
+            <!-- 보너스주사위 -->
+            <button type="roll" id="skill_bonus_06"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=도약}} {{success=[[@{leap}]]}} {{hard=[[floor(@{leap}/2)]]}} {{extreme=[[floor(@{leap}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_06"></label>
+          </div>
+          <div class="sheet-skill07">
+            <span>듣기(25%)</span>
+            <input type="text" name="attr_listening" value="25">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_07"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=듣기}} {{success=[[@{listening}]]}} {{hard=[[floor(@{listening}/2)]]}} {{extreme=[[floor(@{listening}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_07"></label>
+            <!-- 보너스주사위 -->
+            <button type="roll" id="skill_bonus_07"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=듣기}} {{success=[[@{listening}]]}} {{hard=[[floor(@{listening}/2)]]}} {{extreme=[[floor(@{listening}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_07"></label>
+          </div>
+          <div class="sheet-skill08">
+            <span>말재주(05%)</span>
+            <input type="text" name="attr_speaking" value="5">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_08"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=말재주}} {{success=[[@{speaking}]]}} {{hard=[[floor(@{speaking}/2)]]}} {{extreme=[[floor(@{speaking}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_08"></label>
+            <!-- 보너스주사위 -->
+            <button type="roll" id="skill_bonus_08"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=말재주}} {{success=[[@{speaking}]]}} {{hard=[[floor(@{speaking}/2)]]}} {{extreme=[[floor(@{speaking}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_08"></label>
+          </div>
+          <div class="sheet-skill09">
+            <span>매혹(15%)</span>
+            <input type="text" name="attr_captivating" value="15">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_09"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=매혹}} {{success=[[@{captivating}]]}} {{hard=[[floor(@{captivating}/2)]]}} {{extreme=[[floor(@{captivating}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_09"></label>
+            <!-- 보너스주사위 -->
+            <button type="roll" id="skill_bonus_09"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=매혹}} {{success=[[@{captivating}]]}} {{hard=[[floor(@{captivating}/2)]]}} {{extreme=[[floor(@{captivating}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_09"></label>
+          </div>
+          <div class="sheet-skill10">
+            <span>법률(05%)</span>
+            <input type="text" name="attr_law" value="5">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_10" value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=법률}} {{success=[[@{law}]]}} {{hard=[[floor(@{law}/2)]]}} {{extreme=[[floor(@{law}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_10"></label>
+            <!-- 보너스주사위 -->
+            <button type="roll" id="skill_bonus_10"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=법률}} {{success=[[@{law}]]}} {{hard=[[floor(@{law}/2)]]}} {{extreme=[[floor(@{law}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_10"></label>
+          </div>
+          <div class="sheet-skill11">
+            <span>변장(05%)</span>
+            <input type="text" name="attr_disguise" value="5">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_11"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=변장}} {{success=[[@{disguise}]]}} {{hard=[[floor(@{disguise}/2)]]}} {{extreme=[[floor(@{disguise}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_11"></label>
+            <!-- 보너스주사위 -->
+            <button type="roll" id="skill_bonus_11"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=변장}} {{success=[[@{disguise}]]}} {{hard=[[floor(@{disguise}/2)]]}} {{extreme=[[floor(@{disguise}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_11"></label>
+          </div>
+          <div class="sheet-skill12">
+            <span>사격(권총)(20%)</span>
+            <input type="text" name="attr_pistol" value="20">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_12"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=사격(권총)}} {{success=[[@{pistol}]]}} {{hard=[[floor(@{pistol}/2)]]}} {{extreme=[[floor(@{pistol}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_12"></label>
+            <!-- 보너스주사위 -->
+            <button type="roll" id="skill_bonus_12"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=사격(권총)}} {{success=[[@{pistol}]]}} {{hard=[[floor(@{pistol}/2)]]}} {{extreme=[[floor(@{pistol}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_12"></label>
+          </div>
+          <div class="sheet-skill13">
+            <span>사격(라/산)(25%)</span>
+            <input type="text" name="attr_rifle" value="25">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_13"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=사격(라/산)}} {{success=[[@{rifle}]]}} {{hard=[[floor(@{rifle}/2)]]}} {{extreme=[[floor(@{rifle}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_13"></label>
+            <!-- 보너스주사위 -->
+            <button type="roll" id="skill_bonus_13"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=사격(라/산)}} {{success=[[@{rifle}]]}} {{hard=[[floor(@{rifle}/2)]]}} {{extreme=[[floor(@{rifle}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_13"></label>
+          </div>
+          <div class="sheet-skill14">
+            <span>설득(10%)</span>
+            <input type="text" name="attr_persuasion" value="10">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_14"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=설득}} {{success=[[@{persuasion}]]}} {{hard=[[floor(@{persuasion}/2)]]}} {{extreme=[[floor(@{persuasion}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_14"></label>
+            <!-- 보너스주사위 -->
+            <button type="roll" id="skill_bonus_14"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=설득}} {{success=[[@{persuasion}]]}} {{hard=[[floor(@{persuasion}/2)]]}} {{extreme=[[floor(@{persuasion}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_14"></label>
+          </div>
+          <div class="sheet-skill15">
+            <span>손놀림(10%)</span>
+            <input type="text" name="attr_pass" value="10">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_15"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=손놀림}} {{success=[[@{pass}]]}} {{hard=[[floor(@{pass}/2)]]}} {{extreme=[[floor(@{pass}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_15"></label>
+            <!-- 보너스주사위 -->
+            <button type="roll" id="skill_bonus_15"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=손놀림}} {{success=[[@{pass}]]}} {{hard=[[floor(@{pass}/2)]]}} {{extreme=[[floor(@{pass}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_15"></label>
+          </div>
+          <div class="sheet-skill016">
+            <span>수영(20%)</span>
+            <input type="text" name="attr_swimming" value="20">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_16"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=수영}} {{success=[[@{swimming}]]}} {{hard=[[floor(@{swimming}/2)]]}} {{extreme=[[floor(@{swimming}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_16"></label>
+            <!-- 보너스주사위 -->
+            <button type="roll" id="skill_bonus_16"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=수영}} {{success=[[@{swimming}]]}} {{hard=[[floor(@{swimming}/2)]]}} {{extreme=[[floor(@{swimming}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_16"></label>
+          </div>
+          <div class="sheet-skill17">
+            <span>승마(05%)</span>
+            <input type="text" name="attr_riding" value="5">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_17"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=승마}} {{success=[[@{riding}]]}} {{hard=[[floor(@{riding}/2)]]}} {{extreme=[[floor(@{riding}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_17"></label>
+            <!-- 보너스주사위 -->
+            <button type="roll" id="skill_bonus_17"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=승마}} {{success=[[@{riding}]]}} {{hard=[[floor(@{riding}/2)]]}} {{extreme=[[floor(@{riding}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_17"></label>
+          </div>
+          <div class="sheet-skill18">
+            <span>심리학(10%)</span>
+            <input type="text" name="attr_psychology" value="10">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_18"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=심리학}} {{success=[[@{psychology}]]}} {{hard=[[floor(@{psychology}/2)]]}} {{extreme=[[floor(@{psychology}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_18"></label>
+            <!-- 보너스주사위 -->
+            <button type="roll" id="skill_bonus_18"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=심리학}} {{success=[[@{psychology}]]}} {{hard=[[floor(@{psychology}/2)]]}} {{extreme=[[floor(@{psychology}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_18"></label>
+          </div>
+        </div>
+        <div class="sheet-cal2">
+          <div class="sheet-skill19">
+            <span>언어(모국)(교육)</span>
+            <input type="text" name="attr_nativeL">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_19"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=언어(모국)}} {{success=[[@{nativeL}]]}} {{hard=[[floor(@{nativeL}/2)]]}} {{extreme=[[floor(@{nativeL}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_19"></label>
+            <!-- 보너스주사위 -->
+            <button type="roll" id="skill_bonus_19"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=언어(모국)}} {{success=[[@{nativeL}]]}} {{hard=[[floor(@{nativeL}/2)]]}} {{extreme=[[floor(@{nativeL}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_19"></label>
+          </div>
+          <div class="sheet-skill20">
+            <span>역사(05%)</span>
+            <input type="text" name="attr_history" value="5">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_20"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=역사}} {{success=[[@{history}]]}} {{hard=[[floor(@{history}/2)]]}} {{extreme=[[floor(@{history}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_20"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_20"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=역사}} {{success=[[@{history}]]}} {{hard=[[floor(@{history}/2)]]}} {{extreme=[[floor(@{history}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_20"></label>
+          </div>
+          <div class="sheet-skill21">
+            <span>열쇠공(01%)</span>
+            <input type="text" name="attr_locksmith" value="1">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_21"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=열쇠공}} {{success=[[@{locksmith}]]}} {{hard=[[floor(@{locksmith}/2)]]}} {{extreme=[[floor(@{locksmith}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_21"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_21"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=열쇠공}} {{success=[[@{locksmith}]]}} {{hard=[[floor(@{locksmith}/2)]]}} {{extreme=[[floor(@{locksmith}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_21"></label>
+          </div>
+          <div class="sheet-skill22">
+            <span>오르기(20%)</span>
+            <input type="text" name="attr_climbing" value="20">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_22"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=오르기}} {{success=[[@{climbing}]]}} {{hard=[[floor(@{climbing}/2)]]}} {{extreme=[[floor(@{climbing}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_22"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_22"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=오르기}} {{success=[[@{climbing}]]}} {{hard=[[floor(@{climbing}/2)]]}} {{extreme=[[floor(@{climbing}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_22"></label>
+          </div>
+          <div class="sheet-skill23">
+            <span>오컬트(05%)</span>
+            <input type="text" name="attr_occult" value="5">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_23"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=오컬트}} {{success=[[@{occult}]]}} {{hard=[[floor(@{occult}/2)]]}} {{extreme=[[floor(@{occult}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_23"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_23"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=오컬트}} {{success=[[@{occult}]]}} {{hard=[[floor(@{occult}/2)]]}} {{extreme=[[floor(@{occult}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_23"></label>
+          </div>
+          <div class="sheet-skill24">
+            <span>위협(15%)</span>
+            <input type="text" name="attr_threat" value="15">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_24"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=위협}} {{success=[[@{threat}]]}} {{hard=[[floor(@{threat}/2)]]}} {{extreme=[[floor(@{threat}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_24"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_24"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=위협}} {{success=[[@{threat}]]}} {{hard=[[floor(@{threat}/2)]]}} {{extreme=[[floor(@{threat}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_24"></label>
+          </div>
+          <div class="sheet-skill25">
+            <span>은밀행동(20%)</span>
+            <input type="text" name="attr_stealth" value="20">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_25"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=은밀행동}} {{success=[[@{stealth}]]}} {{hard=[[floor(@{stealth}/2)]]}} {{extreme=[[floor(@{stealth}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_25"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_25"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=은밀행동}} {{success=[[@{stealth}]]}} {{hard=[[floor(@{stealth}/2)]]}} {{extreme=[[floor(@{stealth}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_25"></label>
+          </div>
+          <div class="sheet-skill26">
+            <span>응급처치(30%)</span>
+            <input type="text" name="attr_firstAid" value="30">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_26"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=응급처치}} {{success=[[@{firstAid}]]}} {{hard=[[floor(@{firstAid}/2)]]}} {{extreme=[[floor(@{firstAid}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_26"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_26"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=응급처치}} {{success=[[@{firstAid}]]}} {{hard=[[floor(@{firstAid}/2)]]}} {{extreme=[[floor(@{firstAid}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_26"></label>
+          </div>
+          <div class="sheet-skill27">
+            <span>의료(01%)</span>
+            <input type="text" name="attr_medicine" value="1">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_27"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=의료}} {{success=[[@{medicine}]]}} {{hard=[[floor(@{medicine}/2)]]}} {{extreme=[[floor(@{medicine}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_27"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_27"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=의료}} {{success=[[@{medicine}]]}} {{hard=[[floor(@{medicine}/2)]]}} {{extreme=[[floor(@{medicine}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_27"></label>
+          </div>
+          <div class="sheet-skill28">
+            <span>인류학(01%)</span>
+            <input type="text" name="attr_anthropology" value="1">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_28"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=인류학}} {{success=[[@{anthropology}]]}} {{hard=[[floor(@{anthropology}/2)]]}} {{extreme=[[floor(@{anthropology}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_28"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_28"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=인류학}} {{success=[[@{anthropology}]]}} {{hard=[[floor(@{anthropology}/2)]]}} {{extreme=[[floor(@{anthropology}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_28"></label>
+          </div>
+          <div class="sheet-skill29">
+            <span>자동차운전(20%)</span>
+            <input type="text" name="attr_driving" value="20">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_29"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=자동차운전}} {{success=[[@{driving}]]}} {{hard=[[floor(@{driving}/2)]]}} {{extreme=[[floor(@{driving}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_29"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_29"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=자동차운전}} {{success=[[@{driving}]]}} {{hard=[[floor(@{driving}/2)]]}} {{extreme=[[floor(@{driving}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_29"></label>
+          </div>
+          <div class="sheet-skill30">
+            <span>자료조사(20%)</span>
+            <input type="text" name="attr_research" value="20">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_30"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=자료조사}} {{success=[[@{research}]]}} {{hard=[[floor(@{research}/2)]]}} {{extreme=[[floor(@{research}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_30"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_30"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=자료조사}} {{success=[[@{research}]]}} {{hard=[[floor(@{research}/2)]]}} {{extreme=[[floor(@{research}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_30"></label>
+          </div>
+          <div class="sheet-skill31">
+            <span>자연(10%)</span>
+            <input type="text" name="attr_nature" value="10">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_31"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=자연}} {{success=[[@{nature}]]}} {{hard=[[floor(@{nature}/2)]]}} {{extreme=[[floor(@{nature}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_31"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_31"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=자연}} {{success=[[@{nature}]]}} {{hard=[[floor(@{nature}/2)]]}} {{extreme=[[floor(@{nature}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_31"></label>
+          </div>
+          <div class="sheet-skill32">
+            <span>재력(00%)</span>
+            <input type="text" name="attr_wealth" value="0">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_32"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=재력}} {{success=[[@{wealth}]]}} {{hard=[[floor(@{wealth}/2)]]}} {{extreme=[[floor(@{wealth}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_32"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_32"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=재력}} {{success=[[@{wealth}]]}} {{hard=[[floor(@{wealth}/2)]]}} {{extreme=[[floor(@{wealth}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_32"></label>
+          </div>
+          <div class="sheet-skill33">
+            <span>전기수리(10%)</span>
+            <input type="text" name="attr_electronics" value="10">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_33"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=전기수리}} {{success=[[@{electronics}]]}} {{hard=[[floor(@{electronics}/2)]]}} {{extreme=[[floor(@{electronics}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_33"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_33"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=전기수리}} {{success=[[@{electronics}]]}} {{hard=[[floor(@{electronics}/2)]]}} {{extreme=[[floor(@{electronics}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_33"></label>
+          </div>
+          <div class="sheet-skill34">
+            <span>정신분석(01%)</span>
+            <input type="text" name="attr_psychoanalysis" value="1">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_34"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=정신분석}} {{success=[[@{psychoanalysis}]]}} {{hard=[[floor(@{psychoanalysis}/2)]]}} {{extreme=[[floor(@{psychoanalysis}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_34"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_34"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=정신분석}} {{success=[[@{psychoanalysis}]]}} {{hard=[[floor(@{psychoanalysis}/2)]]}} {{extreme=[[floor(@{psychoanalysis}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_34"></label>
+          </div>
+          <div class="sheet-skill35">
+            <span>중장비 조작(01%)</span>
+            <input type="text" name="attr_operation" value="1">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_35"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=중장비 조작}} {{success=[[@{operation}]]}} {{hard=[[floor(@{operation}/2)]]}} {{extreme=[[floor(@{operation}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_35"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_35"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=중장비 조작}} {{success=[[@{operation}]]}} {{hard=[[floor(@{operation}/2)]]}} {{extreme=[[floor(@{operation}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_35"></label>
+          </div>
+          <div class="sheet-skill36">
+            <span>추적(10%)</span>
+            <input type="text" name="attr_tracking" value="10">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_36"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=추적}} {{success=[[@{tracking}]]}} {{hard=[[floor(@{tracking}/2)]]}} {{extreme=[[floor(@{tracking}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_36"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_36"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=추적}} {{success=[[@{tracking}]]}} {{hard=[[floor(@{tracking}/2)]]}} {{extreme=[[floor(@{tracking}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_36"></label>
+          </div>
+        </div>
+        <div class="sheet-cal3">
+          <div class="sheet-skill37">
+            <span>크툴루 신화(00%)</span>
+            <input type="text" name="attr_Cthulhu" value="0">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_37"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=크툴루 신화}} {{success=[[@{cthulhu}]]}} {{hard=[[floor(@{cthulhu}/2)]]}} {{extreme=[[floor(@{cthulhu}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_37"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_37"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=크툴루 신화}} {{success=[[@{cthulhu}]]}} {{hard=[[floor(@{cthulhu}/2)]]}} {{extreme=[[floor(@{cthulhu}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_37"></label>
+          </div>
+          <div class="sheet-skill38">
+            <span>투척(20%)</span>
+            <input type="text" name="attr_throwing" value="20">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_38"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=투척}} {{success=[[@{throwing}]]}} {{hard=[[floor(@{throwing}/2)]]}} {{extreme=[[floor(@{throwing}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_38"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_38"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=투척}} {{success=[[@{throwing}]]}} {{hard=[[floor(@{throwing}/2)]]}} {{extreme=[[floor(@{throwing}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_38"></label>
+          </div>
+          <div class="sheet-skill39">
+            <span>항법(10%)</span>
+            <input type="text" name="attr_navigation" value="10">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_39"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=항법}} {{success=[[@{navigation}]]}} {{hard=[[floor(@{navigation}/2)]]}} {{extreme=[[floor(@{navigation}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_39"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_39"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=항법}} {{success=[[@{navigation}]]}} {{hard=[[floor(@{navigation}/2)]]}} {{extreme=[[floor(@{navigation}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_39"></label>
+          </div>
+          <div class="sheet-skill40">
+            <span>회계(05%)</span>
+            <input type="text" name="attr_accounting" value="5">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_40"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=회계}} {{success=[[@{accounting}]]}} {{hard=[[floor(@{accounting}/2)]]}} {{extreme=[[floor(@{accounting}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_40"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_40"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=회계}} {{success=[[@{accounting}]]}} {{hard=[[floor(@{accounting}/2)]]}} {{extreme=[[floor(@{accounting}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_40"></label>
+          </div>
+          <div class="sheet-skill41">
+            <span>회피(민첩/2)</span>
+            <input type="text" name="attr_evasion">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_41"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=회피}} {{success=[[@{evasion}]]}} {{hard=[[floor(@{evasion}/2)]]}} {{extreme=[[floor(@{evasion}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_41"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_41"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=회피}} {{success=[[@{evasion}]]}} {{hard=[[floor(@{evasion}/2)]]}} {{extreme=[[floor(@{evasion}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_41"></label>
+          </div>
+          <div class="sheet-skill42">
+            <input type="text" name="attr_freeSkill01" value="외국어()" class="freeSkill">
+            <input type="text" name="attr_foreignL1" value="1">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_42"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=@{freeSkill01}}} {{success=[[@{foreignL1}]]}} {{hard=[[floor(@{foreignL1}/2)]]}} {{extreme=[[floor(@{foreignL1}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_42"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_42"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=@{freeSkill01}}} {{success=[[@{foreignL1}]]}} {{hard=[[floor(@{foreignL1}/2)]]}} {{extreme=[[floor(@{foreignL1}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_42"></label>
+          </div>
+          <div class="sheet-skill43">
+            <input type="text" name="attr_freeSkill02" value="과학()" class="freeSkill">
+            <input type="text" name="attr_science1" value="1">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_43"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=@{freeSkill02}}} {{success=[[@{science1}]]}} {{hard=[[floor(@{science1}/2)]]}} {{extreme=[[floor(@{science1}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_43"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_43"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=@{freeSkill02}}} {{success=[[@{science1}]]}} {{hard=[[floor(@{science1}/2)]]}} {{extreme=[[floor(@{science1}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_43"></label>
+          </div>
+          <div class="sheet-skill44">
+            <input type="text" name="attr_freeSkill03" value="예술/공예()" class="freeSkill">
+            <input type="text" name="attr_art1" value="5">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_44"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=@{freeSkill03}}} {{success=[[@{art1}]]}} {{hard=[[floor(@{art1}/2)]]}} {{extreme=[[floor(@{art1}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_44"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_44"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=@{freeSkill03}}} {{success=[[@{art1}]]}} {{hard=[[floor(@{art1}/2)]]}} {{extreme=[[floor(@{art1}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_44"></label>
+          </div>
+          <div class="sheet-skill45">
+            <input type="text" name="attr_freeSkill04" value="사격()" class="freeSkill">
+            <input type="text" name="attr_shooting" value="">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_45"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=@{freeSkill04}}} {{success=[[@{shooting}]]}} {{hard=[[floor(@{shooting}/2)]]}} {{extreme=[[floor(@{shooting}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_45"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_45"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=@{freeSkill04}}} {{success=[[@{shooting}]]}} {{hard=[[floor(@{shooting}/2)]]}} {{extreme=[[floor(@{shooting}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_45"></label>
+          </div>
+          <div class="sheet-skill46">
+            <input type="text" name="attr_freeSkill05" value="" class="freeSkill">
+            <input type="text" name="attr_fs1" value="">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_46"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=@{freeSkill05}}} {{success=[[@{fs1}]]}} {{hard=[[floor(@{fs1}/2)]]}} {{extreme=[[floor(@{fs1}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_46"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_46"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=@{freeSkill05}}} {{success=[[@{fs1}]]}} {{hard=[[floor(@{fs1}/2)]]}} {{extreme=[[floor(@{fs1}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_46"></label>
+          </div>
+          <div class="sheet-skill47">
+            <input type="text" name="attr_freeSkill06" value="" class="freeSkill">
+            <input type="text" name="attr_fs2" value="">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_47"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=@{freeSkill06}}} {{success=[[@{fs2}]]}} {{hard=[[floor(@{fs2}/2)]]}} {{extreme=[[floor(@{fs2}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_47"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_47"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=@{freeSkill06}}} {{success=[[@{fs2}]]}} {{hard=[[floor(@{fs2}/2)]]}} {{extreme=[[floor(@{fs2}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_47"></label>
+          </div>
+          <div class="sheet-skill48">
+            <input type="text" name="attr_freeSkill07" value="" class="freeSkill">
+            <input type="text" name="attr_fs3" value="">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_48"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=@{freeSkill07}}} {{success=[[@{fs3}]]}} {{hard=[[floor(@{fs3}/2)]]}} {{extreme=[[floor(@{fs3}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_48"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_48"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=@{freeSkill07}}} {{success=[[@{fs3}]]}} {{hard=[[floor(@{fs3}/2)]]}} {{extreme=[[floor(@{fs3}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_48"></label>
+          </div>
+          <div class="sheet-skill49">
+            <input type="text" name="attr_freeSkill08" value="" class="freeSkill">
+            <input type="text" name="attr_fs4" value="">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_49"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=@{freeSkill08}}} {{success=[[@{fs4}]]}} {{hard=[[floor(@{fs4}/2)]]}} {{extreme=[[floor(@{fs4}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_49"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_49"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=@{freeSkill08}}} {{success=[[@{fs4}]]}} {{hard=[[floor(@{fs4}/2)]]}} {{extreme=[[floor(@{fs4}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_49"></label>
+          </div>
+          <div class="sheet-skill50">
+            <input type="text" name="attr_freeSkill09" value="" class="freeSkill">
+            <input type="text" name="attr_fs5" value="">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_50"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=@{freeSkill09}}} {{success=[[@{fs5}]]}} {{hard=[[floor(@{fs5}/2)]]}} {{extreme=[[floor(@{fs5}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_50"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_50"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=@{freeSkill09}}} {{success=[[@{fs5}]]}} {{hard=[[floor(@{fs5}/2)]]}} {{extreme=[[floor(@{fs5}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_50"></label>
+          </div>
+          <div class="sheet-skill51">
+            <input type="text" name="attr_freeSkill10" value="" class="freeSkill">
+            <input type="text" name="attr_fs6" value="">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_51"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=@{freeSkill10}}} {{success=[[@{fs6}]]}} {{hard=[[floor(@{fs6}/2)]]}} {{extreme=[[floor(@{fs6}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_51"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_51"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=@{freeSkill10}}} {{success=[[@{fs6}]]}} {{hard=[[floor(@{fs6}/2)]]}} {{extreme=[[floor(@{fs6}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_51"></label>
+          </div>
+          <div class="sheet-skill52">
+            <input type="text" name="attr_freeSkill11" value="" class="freeSkill">
+            <input type="text" name="attr_fs7" value="">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_52"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=@{freeSkill11}}} {{success=[[@{fs7}]]}} {{hard=[[floor(@{fs7}/2)]]}} {{extreme=[[floor(@{fs7}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_52"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_52"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=@{freeSkill11}}} {{success=[[@{fs7}]]}} {{hard=[[floor(@{fs7}/2)]]}} {{extreme=[[floor(@{fs7}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_52"></label>
+          </div>
+          <div class="sheet-skill53">
+            <input type="text" name="attr_freeSkill12" value="" class="freeSkill">
+            <input type="text" name="attr_fs8" value="">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_53"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=@{freeSkill12}}} {{success=[[@{fs8}]]}} {{hard=[[floor(@{fs8}/2)]]}} {{extreme=[[floor(@{fs8}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_53"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_53"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=@{freeSkill12}}} {{success=[[@{fs8}]]}} {{hard=[[floor(@{fs8}/2)]]}} {{extreme=[[floor(@{fs8}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_53"></label>
+          </div>
+          <div class="sheet-skill54">
+            <input type="text" name="attr_freeSkill13" value="" class="freeSkill">
+            <input type="text" name="attr_fs9" value="">
+            <!-- 일반 -->
+            <button type="roll" id="skill_btn_54"
+              value="&{template:coc_dice_roll} {{character_name=@{character_name}}} {{skill_name=@{freeSkill13}}} {{success=[[@{fs9}]]}} {{hard=[[floor(@{fs9}/2)]]}} {{extreme=[[floor(@{fs9}/5)]]}} {{r1=[[1d100]]}}"></button>
+            <label for="skill_btn_54"></label>
+            <!-- 보너스 -->
+            <button type="roll" id="skill_bonus_54"
+              value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=@{freeSkill13}}} {{success=[[@{fs9}]]}} {{hard=[[floor(@{fs9}/2)]]}} {{extreme=[[floor(@{fs9}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+            <label for="skill_bonus_54"></label>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="sheet-combat">
+        <div class="sheet-combat01">
+          <input type="text" value="비무장" name="attr_weapon01">
+          <!-- 일반 -->
+          <button type="roll" id="arm_roll01"
+            value="&{template:coc_dice_roll_combat} {{character_name=@{character_name}}} {{skill_name=@{weapon01}}} {{success=[[@{cbt01}]]}} {{hard=[[floor(@{cbt01}/2)]]}} {{extreme=[[floor(@{cbt01}/5)]]}} {{r1=[[1d100]]}} {{malfunction=@{brk01}}} {{damage=[[@{dmg01}+@{bonus01}]]}}"></button>
+          <label for="arm_roll01"></label>
+          <!-- 보너스주사위 -->
+          <button type="roll" id="arm_bonus01"
+            value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=@{weapon01}}} {{success=[[@{cbt01}]]}} {{hard=[[floor(@{cbt01}/2)]]}} {{extreme=[[floor(@{cbt01}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}} {{malfunction=@{brk01}}} {{damage=[[@{dmg01}+@{bonus01}]]}}"></button>
+          <label for="arm_bonus01"></label>
+          <select name="attr_cbt01">
+            <option value="0" selected>-</option>
+            <option value="@{grapple}">근접전(격투)</option>
+            <option value="@{pistol}">사격(권총)</option>
+            <option value="@{rifle}">사격(라/산)</option>
+            <option value="@{throwing}">투척</option>
+            <option value="@{evasion}">회피</option>
+            <option value="@{foreignL1}">다른 기능 #1</option>
+            <option value="@{science1}">다른 기능 #2</option>
+            <option value="@{art1}">다른 기능 #3</option>
+            <option value="@{shooting}">다른 기능 #4</option>
+            <option value="@{fs1}">다른 기능 #5</option>
+            <option value="@{fs2}">다른 기능 #6</option>
+            <option value="@{fs3}">다른 기능 #7</option>
+            <option value="@{fs4}">다른 기능 #8</option>
+            <option value="@{fs5}">다른 기능 #9</option>
+            <option value="@{fs6}">다른 기능 #10</option>
+          </select>
+          <span>/</span>
+          <input type="text" value="1D3" name="attr_dmg01">
+          <span>/</span>
+          <select name="attr_bonus01">
+            <option value="0">-</option>
+            <option value="@{db}" selected>+DB</option>
+            <option value="@{round(db/2)}">+1/2 DB</option>
+          </select>
+          <span>/</span>
+          <input type="text" name="attr_dstc01" value="-" placeholder="사거리">
+          <span>/</span>
+          <input type="text" name="attr_time01" value="1" placeholder="횟수">
+          <span>/</span>
+          <input type="text" name="attr_amo01" value="-" placeholder="탄약">
+          <span>/</span>
+          <input type="text" name="attr_brk01" value="-" placeholder="고장">
+        </div>
+        <div class="sheet-combat02">
+          <input type="text" value="" name="attr_weapon02">
+          <!-- 일반 -->
+          <button type="roll" id="arm_roll02"
+            value="&{template:coc_dice_roll_combat} {{character_name=@{character_name}}} {{skill_name=@{weapon02}}} {{success=[[@{cbt02}]]}} {{hard=[[floor(@{cbt02}/2)]]}} {{extreme=[[floor(@{cbt02}/5)]]}} {{malfunction=@{brk02}}} {{damage=[[@{dmg02}+@{bonus02}]]}} {{r1=[[1d100]]}}"></button>
+          <label for="arm_roll02"></label>
+          <!-- 보너스 -->
+          <button type="roll" id="arm_bonus02"
+            value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=@{weapon02}}} {{success=[[@{cbt02}]]}} {{hard=[[floor(@{cbt02}/2)]]}} {{extreme=[[floor(@{cbt02}/5)]]}} {{malfunction=@{brk02}}} {{damage=[[@{dmg02}+@{bonus02}]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}}"></button>
+          <label for="arm_bonus02"></label>
+          <select name="attr_cbt02">
+            <option value="0" selected>-</option>
+            <option value="@{grapple}">근접전(격투)</option>
+            <option value="@{pistol}">사격(권총)</option>
+            <option value="@{rifle}">사격(라/산)</option>
+            <option value="@{throwing}">투척</option>
+            <option value="@{evasion}">회피</option>
+            <option value="@{foreignL1}">다른 기능 #1</option>
+            <option value="@{science1}">다른 기능 #2</option>
+            <option value="@{art1}">다른 기능 #3</option>
+            <option value="@{shooting}">다른 기능 #4</option>
+            <option value="@{fs1}">다른 기능 #5</option>
+            <option value="@{fs2}">다른 기능 #6</option>
+            <option value="@{fs3}">다른 기능 #7</option>
+            <option value="@{fs4}">다른 기능 #8</option>
+            <option value="@{fs5}">다른 기능 #9</option>
+            <option value="@{fs6}">다른 기능 #10</option>
+          </select>
+          <span>/</span>
+          <input type="text" value="1D3" name="attr_dmg02">
+          <span>/</span>
+          <select name="attr_bonus02">
+            <option value="0">-</option>
+            <option value="@{db}" selected>+DB</option>
+            <option value="@{round(db/2)}">+1/2 DB</option>
+          </select>
+          <span>/</span>
+          <input type="text" name="attr_dstc02" value="-" placeholder="사거리">
+          <span>/</span>
+          <input type="text" name="attr_time02" value="1" placeholder="횟수">
+          <span>/</span>
+          <input type="text" name="attr_amo02" value="-" placeholder="탄약">
+          <span>/</span>
+          <input type="text" name="attr_brk02" value="-" placeholder="고장">
+        </div>
+        <div class="sheet-combat03">
+          <input type="text" value="" name="attr_weapon03">
+          <!-- 일반 -->
+          <button type="roll" id="arm_roll03"
+            value="&{template:coc_dice_roll_combat} {{character_name=@{character_name}}} {{skill_name=@{weapon03}}} {{success=[[@{cbt03}]]}} {{hard=[[floor(@{cbt03}/2)]]}} {{extreme=[[floor(@{cbt03}/5)]]}} {{r1=[[1d100]]}} {{damage=[[@{dmg03}+@{bonus03}]]}} {{malfunction=@{brk03}}}"></button>
+          <label for="arm_roll03"></label>
+          <!-- 보너스 -->
+          <button type="roll" id="arm_bonus03"
+            value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=@{weapon03}}} {{success=[[@{cbt03}]]}} {{hard=[[floor(@{cbt03}/2)]]}} {{extreme=[[floor(@{cbt03}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}} {{damage=[[@{dmg03}+@{bonus03}]]}} {{malfunction=@{brk03}}}"></button>
+          <label for="arm_bonus03"></label>
+          <select name="attr_cbt03">
+            <option value="0" selected>-</option>
+            <option value="@{grapple}">근접전(격투)</option>
+            <option value="@{pistol}">사격(권총)</option>
+            <option value="@{rifle}">사격(라/산)</option>
+            <option value="@{throwing}">투척</option>
+            <option value="@{evasion}">회피</option>
+            <option value="@{foreignL1}">다른 기능 #1</option>
+            <option value="@{science1}">다른 기능 #2</option>
+            <option value="@{art1}">다른 기능 #3</option>
+            <option value="@{shooting}">다른 기능 #4</option>
+            <option value="@{fs1}">다른 기능 #5</option>
+            <option value="@{fs2}">다른 기능 #6</option>
+            <option value="@{fs3}">다른 기능 #7</option>
+            <option value="@{fs4}">다른 기능 #8</option>
+            <option value="@{fs5}">다른 기능 #9</option>
+            <option value="@{fs6}">다른 기능 #10</option>
+          </select>
+          <span>/</span>
+          <input type="text" value="1D3" name="attr_dmg03">
+          <span>/</span>
+          <select name="attr_bonus03">
+            <option value="0">-</option>
+            <option value="@{db}" selected>+DB</option>
+            <option value="@{round(db/2)}">+1/2 DB</option>
+          </select>
+          <span>/</span>
+          <input type="text" name="attr_dstc03" value="-" placeholder="사거리">
+          <span>/</span>
+          <input type="text" name="attr_time03" value="1" placeholder="횟수">
+          <span>/</span>
+          <input type="text" name="attr_amo03" value="-" placeholder="탄약">
+          <span>/</span>
+          <input type="text" name="attr_brk03" value="-" placeholder="고장">
+        </div>
+        <div class="sheet-combat04">
+          <input type="text" value="" name="attr_weapon04">
+          <!-- 일반 -->
+          <button type="roll" id="arm_roll04"
+            value="&{template:coc_dice_roll_combat} {{character_name=@{character_name}}} {{skill_name=@{weapon04}}} {{success=[[@{cbt04}]]}} {{hard=[[floor(@{cbt04}/2)]]}} {{extreme=[[floor(@{cbt04}/5)]]}} {{r1=[[1d100]]}} {{damage=[[@{dmg04}+@{bonus04}]]}} {{malfunction=@{brk04}}}"></button>
+          <label for="arm_roll04"></label>
+          <!-- 보너스 -->
+          <button type="roll" id="arm_bonus04"
+            value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=@{weapon04}}} {{success=[[@{cbt04}]]}} {{hard=[[floor(@{cbt04}/2)]]}} {{extreme=[[floor(@{cbt04}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}} {{damage=[[@{dmg04}+@{bonus04}]]}} {{malfunction=@{brk04}}}"></button>
+          <label for="arm_bonus04"></label>
+          <select name="attr_cbt04">
+            <option value="0" selected>-</option>
+            <option value="@{grapple}">근접전(격투)</option>
+            <option value="@{pistol}">사격(권총)</option>
+            <option value="@{rifle}">사격(라/산)</option>
+            <option value="@{throwing}">투척</option>
+            <option value="@{evasion}">회피</option>
+            <option value="@{foreignL1}">다른 기능 #1</option>
+            <option value="@{science1}">다른 기능 #2</option>
+            <option value="@{art1}">다른 기능 #3</option>
+            <option value="@{shooting}">다른 기능 #4</option>
+            <option value="@{fs1}">다른 기능 #5</option>
+            <option value="@{fs2}">다른 기능 #6</option>
+            <option value="@{fs3}">다른 기능 #7</option>
+            <option value="@{fs4}">다른 기능 #8</option>
+            <option value="@{fs5}">다른 기능 #9</option>
+            <option value="@{fs6}">다른 기능 #10</option>
+          </select>
+          <span>/</span>
+          <input type="text" value="1D3" name="attr_dmg04">
+          <span>/</span>
+          <select name="attr_bonus04">
+            <option value="0">-</option>
+            <option value="@{db}" selected>+DB</option>
+            <option value="@{round(db/2)}">+1/2 DB</option>
+          </select>
+          <span>/</span>
+          <input type="text" name="attr_dstc04" value="-" placeholder="사거리">
+          <span>/</span>
+          <input type="text" name="attr_time04" value="1" placeholder="횟수">
+          <span>/</span>
+          <input type="text" name="attr_amo04" value="-" placeholder="탄약">
+          <span>/</span>
+          <input type="text" name="attr_brk04" value="-" placeholder="고장">
+        </div>
+
+        <div class="sheet-combat05">
+          <input type="text" value="" name="attr_weapon05">
+          <!-- 일반 -->
+          <button type="roll" id="arm_roll05"
+            value="&{template:coc_dice_roll_combat} {{character_name=@{character_name}}} {{skill_name=@{weapon05}}} {{success=[[@{cbt05}]]}} {{hard=[[floor(@{cbt05}/2)]]}} {{extreme=[[floor(@{cbt05}/5)]]}} {{r1=[[1d100]]}} {{damage=[[@{dmg05}+@{bonus05}]]}} {{malfunction=@{brk05}}}"></button>
+          <label for="arm_roll05"></label>
+          <!-- 보너스 -->
+          <button type="roll" id="arm_bonus05"
+            value="&{template:coc_dice_roll_b} {{character_name=@{character_name}}} {{skill_name=@{weapon05}}} {{success=[[@{cbt05}]]}} {{hard=[[floor(@{cbt05}/2)]]}} {{extreme=[[floor(@{cbt05}/5)]]}} {{r1=[[1d100]]}} {{r2=[[1d100]]}} {{r3=[[1d100]]}} {{damage=[[@{dmg05}+@{bonus05}]]}} {{malfunction=@{brk05}}}"></button>
+          <label for="arm_bonus05"></label>
+          <select name="attr_cbt05">
+            <option value="0" selected>-</option>
+            <option value="@{grapple}">근접전(격투)</option>
+            <option value="@{pistol}">사격(권총)</option>
+            <option value="@{rifle}">사격(라/산)</option>
+            <option value="@{throwing}">투척</option>
+            <option value="@{evasion}">회피</option>
+            <option value="@{foreignL1}">다른 기능 #1</option>
+            <option value="@{science1}">다른 기능 #2</option>
+            <option value="@{art1}">다른 기능 #3</option>
+            <option value="@{shooting}">다른 기능 #4</option>
+            <option value="@{fs1}">다른 기능 #5</option>
+            <option value="@{fs2}">다른 기능 #6</option>
+            <option value="@{fs3}">다른 기능 #7</option>
+            <option value="@{fs4}">다른 기능 #8</option>
+            <option value="@{fs5}">다른 기능 #9</option>
+            <option value="@{fs6}">다른 기능 #10</option>
+          </select>
+          <span>/</span>
+          <input type="text" value="1D3" name="attr_dmg05">
+          <span>/</span>
+          <select name="attr_bonus05">
+            <option value="0">-</option>
+            <option value="@{db}" selected>+DB</option>
+            <option value="@{round(db/2)}">+1/2 DB</option>
+          </select>
+          <span>/</span>
+          <input type="text" name="attr_dstc05" value="-" placeholder="사거리">
+          <span>/</span>
+          <input type="text" name="attr_time05" value="1" placeholder="횟수">
+          <span>/</span>
+          <input type="text" name="attr_amo05" value="-" placeholder="탄약">
+          <span>/</span>
+          <input type="text" name="attr_brk05" value="-" placeholder="고장">
+        </div>
+      </div>
+
+      <div class="sheet-backstory">
+        <div class="sheet-gear">
+          <span>장비와 소지품</span>
+          <div class="">
+            <textarea name="attr_eqp1"></textarea>
+          </div>
+        </div>
+        <div class="sheet-cash">
+          <span>현금과 자산</span>
+          <div class="">
+            <textarea name="attr_cash1"></textarea>
+          </div>
+        </div>
+        <div class="sheet-bs0">
+          <span>겉보기</span>
+          <div class="">
+            <textarea></textarea>
+          </div>
+        </div>
+        <div class="sheet-bs1">
+          <span>성격</span>
+          <div class="">
+            <textarea name="attr_bs01"></textarea>
+          </div>
+        </div>
+        <div class="sheet-bs2">
+          <span>사상/신념</span>
+          <div class="">
+            <textarea name="attr_bs02"></textarea>
+          </div>
+        </div>
+        <div class="sheet-bs3">
+          <span>부상과 흉터</span>
+          <div class="">
+            <textarea name="attr_bs03"></textarea>
+          </div>
+        </div>
+        <div class="sheet-bs4">
+          <span>중요한 사람들</span>
+          <div class="">
+            <textarea name="attr_bs04"></textarea>
+          </div>
+        </div>
+        <div class="sheet-bs5">
+          <span>공포증과 집착증</span>
+          <div class="">
+            <textarea name="attr_bs05"></textarea>
+          </div>
+        </div>
+        <div class="sheet-bs6">
+          <span>의미있는 장소들</span>
+          <div class="">
+            <textarea name="attr_bs06"></textarea>
+          </div>
+        </div>
+        <div class="sheet-bs7">
+          <span>신화서/주문/유물</span>
+          <div class="">
+            <textarea name="attr_bs07"></textarea>
+          </div>
+        </div>
+        <div class="sheet-bs8">
+          <span>소중한 장소들</span>
+          <div class="">
+            <textarea name="attr_bs08"></textarea>
+          </div>
+        </div>
+        <div class="sheet-bs9">
+          <span>기이한 존재들과의 만남</span>
+          <div class="">
+            <textarea name="attr_bs09"></textarea>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- 자유 주사위 템플릿 -->
+  <rolltemplate class="sheet-rolltemplate-coc_dice_roll_free">
+    <table class="sheet-template_table">
+      <caption>{{character_name}}</caption>
+      <tr>
+        <td class="sheet-template_label">기능</td>
+        <td class="sheet-template_value">자유 주사위</td>
+      </tr>
+      <tr>
+        <td class="sheet-template_label" colspan="2">Dice</td>
+      </tr>
+
+      <tr>
+        <td class="sheet-template_value" colspan="2">-{{r1}}-</td>
+      </tr>
+    </table>
+  </rolltemplate>
+
+  <!-- 보너스/페널티 주사위 포함 -->
+  <!-- r1: 원 주사위, r2/r3: 추가 주사위 -->
+  <!-- 사용 css class 목록:
+  sheet-template_table
+  sheet-template_label
+  sheet-template_value
+  sheet-template_value_damage
+  sheet-template_value_critical
+  sheet-template_value_success
+  sheet-template_value_hard
+  sheet-template_value_extreme
+  sheet-template_value_fumble
+  sheet-template_value_fail -->
+  <rolltemplate class="sheet-rolltemplate-coc_dice_roll_b">
+    <!-- <span>{{success_name}}</span> -->
+    <table class="sheet-template_table">
+      <tr class="sheet-caption">
+        <td colspan="2">{{character_name}}</td>
+      </tr>
+      <tr>
+        <td class="sheet-template_label">기능</td>
+        <td class="sheet-template_value">{{skill_name}}</td>
+      </tr>
+      <tr>
+        <td class="sheet-template_label">기준치</td>
+        <td class="sheet-template_value">{{success}}/{{hard}}/{{extreme}}</td>
+      </tr>
+      <!-- 고장값이 있으면 표시 -->
+      <tr>
+        {{#malfunction}}
+          <td class="sheet-template_label">고장</td>
+          <td class="sheet-template_value">{{malfunction}}</td>
+        {{/malfunction}}
+      </tr>
+      <tr>
+        <td class="sheet-template_label">Dice</td>
+        <!-- 일반 주사위는 r1만 쓰고 보너스 주사위는 r2부터도 쓰니까 그냥 r2가 있는지로 둘을 구분 -->
+        {{#r2}}
+          <td class="sheet-template_value">{{r1}} {{r2}} {{r3}}</td>
+        {{/r2}}
+        {{^r2}}
+          <td class="sheet-template_value">{{r1}}</td>
+        {{/r2}}
+      </tr>
+      <tr>
+        <td class="sheet-template_label" colspan="2">결과</td>
+      </tr>
+      <!-- 보너스/페널티 주사위 결과 -->
+      <!-- 좀 더 템플릿 길이를 줄이고 싶으면 +2 +1 을 {{#r2}}{{/r2}} 0을 라벨만 {{^r2}}{{/r2}}에 그리고 -1 -2를 다시 {{#r2}}{{/r2}}에 정의하면 되는데
+    보기가 어려워져서 보너스/페널티 + 일반 으로 0을 한 번 중복시킴 -->
+      <tr>
+        <td class="sheet-template_label">+2</td>
+        <!-- +2 계산 -->
+        {{#rollLess() r2 r1}}
+          <!-- r3 < r2 < r1 -->
+          {{#rollLess() r3 r2}}
+            <!-- critical -->
+            {{#rollTotal() r3 1}}
+              <td class="sheet-template_value_critical">대성공</td>
+            {{/rollTotal() r3 1}}
+            <!-- success -->
+            {{#rollBetween() r3 2 success}}
+              <!-- normal success -->
+              {{#rollGreater() r3 hard}}
+                <td class="sheet-template_value_success">성공</td>
+              {{/rollGreater() r3 hard}}
+              <!-- hard successes -->
+              {{#rollBetween() r3 2 hard}}
+                {{#rollGreater() r3 extreme}}
+                  <td class="sheet-template_value_hard">어려운 성공</td>
+                {{/rollGreater() r3 extreme}}
+                <!-- extreme success -->
+                {{#rollBetween() r3 2 extreme}}
+                  <td class="sheet-template_value_extreme">극단적 성공</td>
+                {{/rollBetween() r3 2 extreme}}
+              {{/rollBetween() r3 2 hard}}
+            {{/rollBetween() r3 2 success}}
+            <!-- not success -->
+            {{#rollGreater() r3 success}}
+              <!-- skill >= 50 -->
+              {{#rollGreater() success 49}}
+                <!-- fumble -->
+                {{#rollTotal() r3 100}}
+                  <td class="sheet-template_value_fumble">대실패</td>
+                {{/rollTotal() r3 100}}
+                <!-- simple failure -->
+                {{#rollLess() r3 100}}
+                  <td class="sheet-template_value_fail">실패</td>
+                {{/rollLess() r3 100}}
+              {{/rollGreater() success 49}}
+              <!-- skill < 50 -->
+              {{#rollLess() success 50}}
+                <!-- fumble -->
+                {{#rollGreater() r3 95}}
+                  <td class="sheet-template_value_fumble">대실패</td>
+                {{/rollGreater() r3 95}}
+                <!-- simple failure -->
+                {{#rollLess() r3 96}}
+                  <td class="sheet-template_value_fail">실패</td>
+                {{/rollLess() r3 96}}
+              {{/rollLess() success 50}}
+            {{/rollGreater() r3 success}}
+          {{/rollLess() r3 r2}}
+          <!-- r2 <= r3 && r2 < r1 -->
+          {{#^rollLess() r3 r2}}
+            <!-- critical -->
+            {{#rollTotal() r2 1}}
+              <td class="sheet-template_value_critical">대성공</td>
+            {{/rollTotal() r2 1}}
+            <!-- success -->
+            {{#rollBetween() r2 2 success}}
+              <!-- normal success -->
+              {{#rollGreater() r2 hard}}
+                <td class="sheet-template_value_success">성공</td>
+              {{/rollGreater() r2 hard}}
+              <!-- hard successes -->
+              {{#rollBetween() r2 2 hard}}
+                {{#rollGreater() r2 extreme}}
+                  <td class="sheet-template_value_hard">어려운 성공</td>
+                {{/rollGreater() r2 extreme}}
+                <!-- extreme success -->
+                {{#rollBetween() r2 2 extreme}}
+                  <td class="sheet-template_value_extreme">극단적 성공</td>
+                {{/rollBetween() r2 2 extreme}}
+              {{/rollBetween() r2 2 hard}}
+            {{/rollBetween() r2 2 success}}
+            <!-- not success -->
+            {{#rollGreater() r2 success}}
+              <!-- skill >= 50 -->
+              {{#rollGreater() success 49}}
+                <!-- fumble -->
+                {{#rollTotal() r2 100}}
+                  <td class="sheet-template_value_fumble">대실패</td>
+                {{/rollTotal() r2 100}}
+                <!-- simple failure -->
+                {{#rollLess() r2 100}}
+                  <td class="sheet-template_value_fail">실패</td>
+                {{/rollLess() r2 100}}
+              {{/rollGreater() success 49}}
+              <!-- skill < 50 -->
+              {{#rollLess() success 50}}
+                <!-- fumble -->
+                {{#rollGreater() r2 95}}
+                  <td class="sheet-template_value_fumble">대실패</td>
+                {{/rollGreater() r2 95}}
+                <!-- simple failure -->
+                {{#rollLess() r2 96}}
+                  <td class="sheet-template_value_fail">실패</td>
+                {{/rollLess() r2 96}}
+              {{/rollLess() success 50}}
+            {{/rollGreater() r2 success}}
+          {{/^rollLess() r3 r2}}
+        {{/rollLess() r2 r1}}
+        <!-- r2 >= r1 -->
+        {{#^rollLess() r2 r1}}
+          <!-- r3 < r1 <= r2 -->
+          {{#rollLess() r3 r1}}
+            <!-- critical -->
+            {{#rollTotal() r3 1}}
+              <td class="sheet-template_value_critical">대성공</td>
+            {{/rollTotal() r3 1}}
+            <!-- success -->
+            {{#rollBetween() r3 2 success}}
+              <!-- normal success -->
+              {{#rollGreater() r3 hard}}
+                <td class="sheet-template_value_success">성공</td>
+              {{/rollGreater() r3 hard}}
+              <!-- hard successes -->
+              {{#rollBetween() r3 2 hard}}
+                {{#rollGreater() r3 extreme}}
+                  <td class="sheet-template_value_hard">어려운 성공</td>
+                {{/rollGreater() r3 extreme}}
+                <!-- extreme success -->
+                {{#rollBetween() r3 2 extreme}}
+                  <td class="sheet-template_value_extreme">극단적 성공</td>
+                {{/rollBetween() r3 2 extreme}}
+              {{/rollBetween() r3 2 hard}}
+            {{/rollBetween() r3 2 success}}
+            <!-- not success -->
+            {{#rollGreater() r3 success}}
+              <!-- skill >= 50 -->
+              {{#rollGreater() success 49}}
+                <!-- fumble -->
+                {{#rollTotal() r3 100}}
+                  <td class="sheet-template_value_fumble">대실패</td>
+                {{/rollTotal() r3 100}}
+                <!-- simple failure -->
+                {{#rollLess() r3 100}}
+                  <td class="sheet-template_value_fail">실패</td>
+                {{/rollLess() r3 100}}
+              {{/rollGreater() success 49}}
+              <!-- skill < 50 -->
+              {{#rollLess() success 50}}
+                <!-- fumble -->
+                {{#rollGreater() r3 95}}
+                  <td class="sheet-template_value_fumble">대실패</td>
+                {{/rollGreater() r3 95}}
+                <!-- simple failure -->
+                {{#rollLess() r3 96}}
+                  <td class="sheet-template_value_fail">실패</td>
+                {{/rollLess() r3 96}}
+              {{/rollLess() success 50}}
+            {{/rollGreater() r3 success}}
+          {{/rollLess() r3 r1}}
+          <!-- r3 >= r1 && r2 >= r1 -->
+          {{#^rollLess() r3 r1}}
+            <!-- critical -->
+            {{#rollTotal() r1 1}}
+              <td class="sheet-template_value_critical">대성공</td>
+            {{/rollTotal() r1 1}}
+            <!-- success -->
+            {{#rollBetween() r1 2 success}}
+              <!-- normal success -->
+              {{#rollGreater() r1 hard}}
+                <td class="sheet-template_value_success">성공</td>
+              {{/rollGreater() r1 hard}}
+              <!-- hard successes -->
+              {{#rollBetween() r1 2 hard}}
+                {{#rollGreater() r1 extreme}}
+                  <td class="sheet-template_value_hard">어려운 성공</td>
+                {{/rollGreater() r1 extreme}}
+                <!-- extreme success -->
+                {{#rollBetween() r1 2 extreme}}
+                  <td class="sheet-template_value_extreme">극단적 성공</td>
+                {{/rollBetween() r1 2 extreme}}
+              {{/rollBetween() r1 2 hard}}
+            {{/rollBetween() r1 2 success}}
+            <!-- not success -->
+            {{#rollGreater() r1 success}}
+              <!-- skill >= 50 -->
+              {{#rollGreater() success 49}}
+                <!-- fumble -->
+                {{#rollTotal() r1 100}}
+                  <td class="sheet-template_value_fumble">대실패</td>
+                {{/rollTotal() r1 100}}
+                <!-- simple failure -->
+                {{#rollLess() r1 100}}
+                  <td class="sheet-template_value_fail">실패</td>
+                {{/rollLess() r1 100}}
+              {{/rollGreater() success 49}}
+              <!-- skill < 50 -->
+              {{#rollLess() success 50}}
+                <!-- fumble -->
+                {{#rollGreater() r1 95}}
+                  <td class="sheet-template_value_fumble">대실패</td>
+                {{/rollGreater() r1 95}}
+                <!-- simple failure -->
+                {{#rollLess() r1 96}}
+                  <td class="sheet-template_value_fail">실패</td>
+                {{/rollLess() r1 96}}
+              {{/rollLess() success 50}}
+            {{/rollGreater() r1 success}}
+          {{/^rollLess() r3 r1}}
+        {{/^rollLess() r2 r1}}
+
+
+      </tr>
+      <tr>
+        <td class="sheet-template_label">+1</td>
+        <!-- (r2 < r1): r2로 체크 -->
+        {{#rollLess() r2 r1}}
+          <!-- critical -->
+          {{#rollTotal() r2 1}}
+            <td class="sheet-template_value_critical">대성공</td>
+          {{/rollTotal() r2 1}}
+          <!-- success -->
+          {{#rollBetween() r2 2 success}}
+            <!-- normal success -->
+            {{#rollGreater() r2 hard}}
+              <td class="sheet-template_value_success">성공</td>
+            {{/rollGreater() r2 hard}}
+            <!-- hard successes -->
+            {{#rollBetween() r2 2 hard}}
+              {{#rollGreater() r2 extreme}}
+                <td class="sheet-template_value_hard">어려운 성공</td>
+              {{/rollGreater() r2 extreme}}
+              <!-- extreme success -->
+              {{#rollBetween() r2 2 extreme}}
+                <td class="sheet-template_value_extreme">극단적 성공</td>
+              {{/rollBetween() r2 2 extreme}}
+            {{/rollBetween() r2 2 hard}}
+          {{/rollBetween() r2 2 success}}
+          <!-- not success -->
+          {{#rollGreater() r2 success}}
+            <!-- skill >= 50 -->
+            {{#rollGreater() success 49}}
+              <!-- fumble -->
+              {{#rollTotal() r2 100}}
+                <td class="sheet-template_value_fumble">대실패</td>
+              {{/rollTotal() r2 100}}
+              <!-- simple failure -->
+              {{#rollLess() r2 100}}
+                <td class="sheet-template_value_fail">실패</td>
+              {{/rollLess() r2 100}}
+            {{/rollGreater() success 49}}
+            <!-- skill < 50 -->
+            {{#rollLess() success 50}}
+              <!-- fumble -->
+              {{#rollGreater() r2 95}}
+                <td class="sheet-template_value_fumble">대실패</td>
+              {{/rollGreater() r2 95}}
+              <!-- simple failure -->
+              {{#rollLess() r2 96}}
+                <td class="sheet-template_value_fail">실패</td>
+              {{/rollLess() r2 96}}
+            {{/rollLess() success 50}}
+          {{/rollGreater() r2 success}}
+        {{/rollLess() r2 r1}}
+        <!-- (r2 >= r1) -->
+        {{#^rollLess() r2 r1}}
+          <!-- critical -->
+          {{#rollTotal() r1 1}}
+            <td class="sheet-template_value_critical">대성공</td>
+          {{/rollTotal() r1 1}}
+          <!-- success -->
+          {{#rollBetween() r1 2 success}}
+            <!-- normal success -->
+            {{#rollGreater() r1 hard}}
+              <td class="sheet-template_value_success">성공</td>
+            {{/rollGreater() r1 hard}}
+            <!-- hard successes -->
+            {{#rollBetween() r1 2 hard}}
+              {{#rollGreater() r1 extreme}}
+                <td class="sheet-template_value_hard">어려운 성공</td>
+              {{/rollGreater() r1 extreme}}
+              <!-- extreme success -->
+              {{#rollBetween() r1 2 extreme}}
+                <td class="sheet-template_value_extreme">극단적 성공</td>
+              {{/rollBetween() r1 2 extreme}}
+            {{/rollBetween() r1 2 hard}}
+          {{/rollBetween() r1 2 success}}
+          <!-- not success -->
+          {{#rollGreater() r1 success}}
+            <!-- skill >= 50 -->
+            {{#rollGreater() success 49}}
+              <!-- fumble -->
+              {{#rollTotal() r1 100}}
+                <td class="sheet-template_value_fumble">대실패</td>
+              {{/rollTotal() r1 100}}
+              <!-- simple failure -->
+              {{#rollLess() r1 100}}
+                <td class="sheet-template_value_fail">실패</td>
+              {{/rollLess() r1 100}}
+            {{/rollGreater() success 49}}
+            <!-- skill < 50 -->
+            {{#rollLess() success 50}}
+              <!-- fumble -->
+              {{#rollGreater() r1 95}}
+                <td class="sheet-template_value_fumble">대실패</td>
+              {{/rollGreater() r1 95}}
+              <!-- simple failure -->
+              {{#rollLess() r1 96}}
+                <td class="sheet-template_value_fail">실패</td>
+              {{/rollLess() r1 96}}
+            {{/rollLess() success 50}}
+          {{/rollGreater() r1 success}}
+        {{/^rollLess() r2 r1}}
+      </tr>
+      <tr>
+        <td class="sheet-template_label">0</td>
+        <!-- critical -->
+        {{#rollTotal() r1 1}}
+          <td class="sheet-template_value_critical">대성공</td>
+        {{/rollTotal() r1 1}}
+        <!-- success -->
+        {{#rollBetween() r1 2 success}}
+          <!-- normal success -->
+          {{#rollGreater() r1 hard}}
+            <td class="sheet-template_value_success">성공</td>
+          {{/rollGreater() r1 hard}}
+          <!-- hard successes -->
+          {{#rollBetween() r1 2 hard}}
+            {{#rollGreater() r1 extreme}}
+              <td class="sheet-template_value_hard">어려운 성공</td>
+            {{/rollGreater() r1 extreme}}
+            <!-- extreme success -->
+            {{#rollBetween() r1 2 extreme}}
+              <td class="sheet-template_value_extreme">극단적 성공</td>
+            {{/rollBetween() r1 2 extreme}}
+          {{/rollBetween() r1 2 hard}}
+        {{/rollBetween() r1 2 success}}
+        <!-- not success -->
+        {{#rollGreater() r1 success}}
+          <!-- skill >= 50 -->
+          {{#rollGreater() success 49}}
+            <!-- fumble -->
+            {{#rollTotal() r1 100}}
+              <td class="sheet-template_value_fumble">대실패</td>
+            {{/rollTotal() r1 100}}
+            <!-- simple failure -->
+            {{#rollLess() r1 100}}
+              <td class="sheet-template_value_fail">실패</td>
+            {{/rollLess() r1 100}}
+          {{/rollGreater() success 49}}
+          <!-- skill < 50 -->
+          {{#rollLess() success 50}}
+            <!-- fumble -->
+            {{#rollGreater() r1 95}}
+              <td class="sheet-template_value_fumble">대실패</td>
+            {{/rollGreater() r1 95}}
+            <!-- simple failure -->
+            {{#rollLess() r1 96}}
+              <td class="sheet-template_value_fail">실패</td>
+            {{/rollLess() r1 96}}
+          {{/rollLess() success 50}}
+        {{/rollGreater() r1 success}}
+      </tr>
+      <tr>
+        <td class="sheet-template_label">-1</td>
+        <!-- r2 > r1 -->
+        {{#rollGreater() r2 r1}}
+          <!-- critical -->
+          {{#rollTotal() r2 1}}
+            <td class="sheet-template_value_critical">대성공</td>
+          {{/rollTotal() r2 1}}
+          <!-- success -->
+          {{#rollBetween() r2 2 success}}
+            <!-- normal success -->
+            {{#rollGreater() r2 hard}}
+              <td class="sheet-template_value_success">성공</td>
+            {{/rollGreater() r2 hard}}
+            <!-- hard successes -->
+            {{#rollBetween() r2 2 hard}}
+              {{#rollGreater() r2 extreme}}
+                <td class="sheet-template_value_hard">어려운 성공</td>
+              {{/rollGreater() r2 extreme}}
+              <!-- extreme success -->
+              {{#rollBetween() r2 2 extreme}}
+                <td class="sheet-template_value_extreme">극단적 성공</td>
+              {{/rollBetween() r2 2 extreme}}
+            {{/rollBetween() r2 2 hard}}
+          {{/rollBetween() r2 2 success}}
+          <!-- not success -->
+          {{#rollGreater() r2 success}}
+            <!-- skill >= 50 -->
+            {{#rollGreater() success 49}}
+              <!-- fumble -->
+              {{#rollTotal() r2 100}}
+                <td class="sheet-template_value_fumble">대실패</td>
+              {{/rollTotal() r2 100}}
+              <!-- simple failure -->
+              {{#rollLess() r2 100}}
+                <td class="sheet-template_value_fail">실패</td>
+              {{/rollLess() r2 100}}
+            {{/rollGreater() success 49}}
+            <!-- skill < 50 -->
+            {{#rollLess() success 50}}
+              <!-- fumble -->
+              {{#rollGreater() r2 95}}
+                <td class="sheet-template_value_fumble">대실패</td>
+              {{/rollGreater() r2 95}}
+              <!-- simple failure -->
+              {{#rollLess() r2 96}}
+                <td class="sheet-template_value_fail">실패</td>
+              {{/rollLess() r2 96}}
+            {{/rollLess() success 50}}
+          {{/rollGreater() r2 success}}
+        {{/rollGreater() r2 r1}}
+        <!-- (r2 <= r1) -->
+        {{#^rollGreater() r2 r1}}
+          <!-- critical -->
+          {{#rollTotal() r1 1}}
+            <td class="sheet-template_value_critical">대성공</td>
+          {{/rollTotal() r1 1}}
+          <!-- success -->
+          {{#rollBetween() r1 2 success}}
+            <!-- normal success -->
+            {{#rollGreater() r1 hard}}
+              <td class="sheet-template_value_success">성공</td>
+            {{/rollGreater() r1 hard}}
+            <!-- hard successes -->
+            {{#rollBetween() r1 2 hard}}
+              {{#rollGreater() r1 extreme}}
+                <td class="sheet-template_value_hard">어려운 성공</td>
+              {{/rollGreater() r1 extreme}}
+              <!-- extreme success -->
+              {{#rollBetween() r1 2 extreme}}
+                <td class="sheet-template_value_extreme">극단적 성공</td>
+              {{/rollBetween() r1 2 extreme}}
+            {{/rollBetween() r1 2 hard}}
+          {{/rollBetween() r1 2 success}}
+          <!-- not success -->
+          {{#rollGreater() r1 success}}
+            <!-- skill >= 50 -->
+            {{#rollGreater() success 49}}
+              <!-- fumble -->
+              {{#rollTotal() r1 100}}
+                <td class="sheet-template_value_fumble">대실패</td>
+              {{/rollTotal() r1 100}}
+              <!-- simple failure -->
+              {{#rollLess() r1 100}}
+                <td class="sheet-template_value_fail">실패</td>
+              {{/rollLess() r1 100}}
+            {{/rollGreater() success 49}}
+            <!-- skill < 50 -->
+            {{#rollLess() success 50}}
+              <!-- fumble -->
+              {{#rollGreater() r1 95}}
+                <td class="sheet-template_value_fumble">대실패</td>
+              {{/rollGreater() r1 95}}
+              <!-- simple failure -->
+              {{#rollLess() r1 96}}
+                <td class="sheet-template_value_fail">실패</td>
+              {{/rollLess() r1 96}}
+            {{/rollLess() success 50}}
+          {{/rollGreater() r1 success}}
+        {{/^rollGreater() r2 r1}}
+      </tr>
+      <tr>
+        <td class="sheet-template_label">-2</td>
+        {{#rollGreater() r2 r1}}
+          <!-- r3 > r2 > r1 -->
+          {{#rollGreater() r3 r2}}
+            <!-- critical -->
+            {{#rollTotal() r3 1}}
+              <td class="sheet-template_value_critical">대성공</td>
+            {{/rollTotal() r3 1}}
+            <!-- success -->
+            {{#rollBetween() r3 2 success}}
+              <!-- normal success -->
+              {{#rollGreater() r3 hard}}
+                <td class="sheet-template_value_success">성공</td>
+              {{/rollGreater() r3 hard}}
+              <!-- hard successes -->
+              {{#rollBetween() r3 2 hard}}
+                {{#rollGreater() r3 extreme}}
+                  <td class="sheet-template_value_hard">어려운 성공</td>
+                {{/rollGreater() r3 extreme}}
+                <!-- extreme success -->
+                {{#rollBetween() r3 2 extreme}}
+                  <td class="sheet-template_value_extreme">극단적 성공</td>
+                {{/rollBetween() r3 2 extreme}}
+              {{/rollBetween() r3 2 hard}}
+            {{/rollBetween() r3 2 success}}
+            <!-- not success -->
+            {{#rollGreater() r3 success}}
+              <!-- skill >= 50 -->
+              {{#rollGreater() success 49}}
+                <!-- fumble -->
+                {{#rollTotal() r3 100}}
+                  <td class="sheet-template_value_fumble">대실패</td>
+                {{/rollTotal() r3 100}}
+                <!-- simple failure -->
+                {{#rollLess() r3 100}}
+                  <td class="sheet-template_value_fail">실패</td>
+                {{/rollLess() r3 100}}
+              {{/rollGreater() success 49}}
+              <!-- skill < 50 -->
+              {{#rollLess() success 50}}
+                <!-- fumble -->
+                {{#rollGreater() r3 95}}
+                  <td class="sheet-template_value_fumble">대실패</td>
+                {{/rollGreater() r3 95}}
+                <!-- simple failure -->
+                {{#rollLess() r3 96}}
+                  <td class="sheet-template_value_fail">실패</td>
+                {{/rollLess() r3 96}}
+              {{/rollLess() success 50}}
+            {{/rollGreater() r3 success}}
+          {{/rollGreater() r3 r2}}
+          <!-- r2 > r1 && r3 <= r2 -->
+          {{#^rollGreater() r3 r2}}
+            <!-- critical -->
+            {{#rollTotal() r2 1}}
+              <td class="sheet-template_value_critical">대성공</td>
+            {{/rollTotal() r2 1}}
+            <!-- success -->
+            {{#rollBetween() r2 2 success}}
+              <!-- normal success -->
+              {{#rollGreater() r2 hard}}
+                <td class="sheet-template_value_success">성공</td>
+              {{/rollGreater() r2 hard}}
+              <!-- hard successes -->
+              {{#rollBetween() r2 2 hard}}
+                {{#rollGreater() r2 extreme}}
+                  <td class="sheet-template_value_hard">어려운 성공</td>
+                {{/rollGreater() r2 extreme}}
+                <!-- extreme success -->
+                {{#rollBetween() r2 2 extreme}}
+                  <td class="sheet-template_value_extreme">극단적 성공</td>
+                {{/rollBetween() r2 2 extreme}}
+              {{/rollBetween() r2 2 hard}}
+            {{/rollBetween() r2 2 success}}
+            <!-- not success -->
+            {{#rollGreater() r2 success}}
+              <!-- skill >= 50 -->
+              {{#rollGreater() success 49}}
+                <!-- fumble -->
+                {{#rollTotal() r2 100}}
+                  <td class="sheet-template_value_fumble">대실패</td>
+                {{/rollTotal() r2 100}}
+                <!-- simple failure -->
+                {{#rollLess() r2 100}}
+                  <td class="sheet-template_value_fail">실패</td>
+                {{/rollLess() r2 100}}
+              {{/rollGreater() success 49}}
+              <!-- skill < 50 -->
+              {{#rollLess() success 50}}
+                <!-- fumble -->
+                {{#rollGreater() r2 95}}
+                  <td class="sheet-template_value_fumble">대실패</td>
+                {{/rollGreater() r2 95}}
+                <!-- simple failure -->
+                {{#rollLess() r2 96}}
+                  <td class="sheet-template_value_fail">실패</td>
+                {{/rollLess() r2 96}}
+              {{/rollLess() success 50}}
+            {{/rollGreater() r2 success}}
+          {{/^rollGreater() r3 r2}}
+        {{/rollGreater() r2 r1}}
+        <!-- r2 <= r1 -->
+        {{#^rollGreater() r2 r1}}
+          {{#rollGreater() r3 r1}}
+            <!-- critical -->
+            {{#rollTotal() r3 1}}
+              <td class="sheet-template_value_critical">대성공</td>
+            {{/rollTotal() r3 1}}
+            <!-- success -->
+            {{#rollBetween() r3 2 success}}
+              <!-- normal success -->
+              {{#rollGreater() r3 hard}}
+                <td class="sheet-template_value_success">성공</td>
+              {{/rollGreater() r3 hard}}
+              <!-- hard successes -->
+              {{#rollBetween() r3 2 hard}}
+                {{#rollGreater() r3 extreme}}
+                  <td class="sheet-template_value_hard">어려운 성공</td>
+                {{/rollGreater() r3 extreme}}
+                <!-- extreme success -->
+                {{#rollBetween() r3 2 extreme}}
+                  <td class="sheet-template_value_extreme">극단적 성공</td>
+                {{/rollBetween() r3 2 extreme}}
+              {{/rollBetween() r3 2 hard}}
+            {{/rollBetween() r3 2 success}}
+            <!-- not success -->
+            {{#rollGreater() r3 success}}
+              <!-- skill >= 50 -->
+              {{#rollGreater() success 49}}
+                <!-- fumble -->
+                {{#rollTotal() r3 100}}
+                  <td class="sheet-template_value_fumble">대실패</td>
+                {{/rollTotal() r3 100}}
+                <!-- simple failure -->
+                {{#rollLess() r3 100}}
+                  <td class="sheet-template_value_fail">실패</td>
+                {{/rollLess() r3 100}}
+              {{/rollGreater() success 49}}
+              <!-- skill < 50 -->
+              {{#rollLess() success 50}}
+                <!-- fumble -->
+                {{#rollGreater() r3 95}}
+                  <td class="sheet-template_value_fumble">대실패</td>
+                {{/rollGreater() r3 95}}
+                <!-- simple failure -->
+                {{#rollLess() r3 96}}
+                  <td class="sheet-template_value_fail">실패</td>
+                {{/rollLess() r3 96}}
+              {{/rollLess() success 50}}
+            {{/rollGreater() r3 success}}
+          {{/rollGreater() r3 r1}}
+          <!-- r3 <= r1 && r2 <= r1 -->
+          {{#^rollGreater() r3 r1}}
+            <!-- critical -->
+            {{#rollTotal() r1 1}}
+              <td class="sheet-template_value_critical">대성공</td>
+            {{/rollTotal() r1 1}}
+            <!-- success -->
+            {{#rollBetween() r1 2 success}}
+              <!-- normal success -->
+              {{#rollGreater() r1 hard}}
+                <td class="sheet-template_value_success">성공</td>
+              {{/rollGreater() r1 hard}}
+              <!-- hard successes -->
+              {{#rollBetween() r1 2 hard}}
+                {{#rollGreater() r1 extreme}}
+                  <td class="sheet-template_value_hard">어려운 성공</td>
+                {{/rollGreater() r1 extreme}}
+                <!-- extreme success -->
+                {{#rollBetween() r1 2 extreme}}
+                  <td class="sheet-template_value_extreme">극단적 성공</td>
+                {{/rollBetween() r1 2 extreme}}
+              {{/rollBetween() r1 2 hard}}
+            {{/rollBetween() r1 2 success}}
+            <!-- not success -->
+            {{#rollGreater() r1 success}}
+              <!-- skill >= 50 -->
+              {{#rollGreater() success 49}}
+                <!-- fumble -->
+                {{#rollTotal() r1 100}}
+                  <td class="sheet-template_value_fumble">대실패</td>
+                {{/rollTotal() r1 100}}
+                <!-- simple failure -->
+                {{#rollLess() r1 100}}
+                  <td class="sheet-template_value_fail">실패</td>
+                {{/rollLess() r1 100}}
+              {{/rollGreater() success 49}}
+              <!-- skill < 50 -->
+              {{#rollLess() success 50}}
+                <!-- fumble -->
+                {{#rollGreater() r1 95}}
+                  <td class="sheet-template_value_fumble">대실패</td>
+                {{/rollGreater() r1 95}}
+                <!-- simple failure -->
+                {{#rollLess() r1 96}}
+                  <td class="sheet-template_value_fail">실패</td>
+                {{/rollLess() r1 96}}
+              {{/rollLess() success 50}}
+            {{/rollGreater() r1 success}}
+          {{/^rollGreater() r3 r1}}
+        {{/^rollGreater() r2 r1}}
+      </tr>
+
+      <!-- 공격일 때 피해 정보 표시 -->
+      {{#damage}}
+        <tr>
+          <td class="sheet-template_label">피해</td>
+          <td class="sheet-template_value">{{damage}}</td>
+        </tr>
+      {{/damage}}
+    </table>
+  </rolltemplate>
+
+  <!-- 일반 주사위 템플릿 -->
+  <rolltemplate class="sheet-rolltemplate-coc_dice_roll">
+    <!-- <span>{{success_name}}</span> -->
+    <table class="sheet-template_table">
+      <caption>{{character_name}}</caption>
+      <tr>
+        <td class="sheet-template_label">기능</td>
+        <td class="sheet-template_value">{{skill_name}}</td>
+      </tr>
+      <tr>
+        <td class="sheet-template_label">기준치</td>
+        <td class="sheet-template_value">{{success}}/{{hard}}/{{extreme}}</td>
+      </tr>
+      <!-- 고장값이 있으면 표시 -->
+      {{#malfunction}}
+        <tr>
+          <td class="sheet-template_label">고장</td>
+          <td class="sheet-template_value">{{malfunction}}</td>
+        </tr>
+      {{/malfunction}}
+      <tr>
+        <td class="sheet-template_label">Dice</td>
+        <!-- 일반 주사위는 r1만 쓰고 보너스 주사위는 r2부터도 쓰니까 그냥 r2가 있는지로 둘을 구분 -->
+        {{#r2}}
+          <td class="sheet-template_value">{{r1}} {{r2}} {{r3}}</td>
+        {{/r2}}
+        {{^r2}}
+          <td class="sheet-template_value">{{r1}}</td>
+        {{/r2}}
+      </tr>
+      <tr>
+        <td class="sheet-template_label" colspan="2">결과</td>
+      </tr>
+
+      <!-- 일반 주사위 -->
+      <tr class="sheet-template_value">
+        <!-- critical -->
+        {{#rollTotal() r1 1}}
+          <td class="sheet-template_value_critical" colspan="2">대성공</td>
+        {{/rollTotal() r1 1}}
+        <!-- success -->
+        {{#rollBetween() r1 2 success}}
+          <!-- normal success -->
+          {{#rollGreater() r1 hard}}
+            <td class="sheet-template_value_success" colspan="2">성공</td>
+          {{/rollGreater() r1 hard}}
+          <!-- hard successes -->
+          {{#rollBetween() r1 2 hard}}
+            {{#rollGreater() r1 extreme}}
+              <td class="sheet-template_value_hard" colspan="2">어려운 성공</td>
+            {{/rollGreater() r1 extreme}}
+            <!-- extreme success -->
+            {{#rollBetween() r1 2 extreme}}
+              <td class="sheet-template_value_extreme" colspan="2">극단적 성공</td>
+            {{/rollBetween() r1 2 extreme}}
+          {{/rollBetween() r1 2 hard}}
+        {{/rollBetween() r1 2 success}}
+        <!-- not success -->
+        {{#rollGreater() r1 success}}
+          <!-- skill >= 50 -->
+          {{#rollGreater() success 49}}
+            <!-- fumble -->
+            {{#rollTotal() r1 100}}
+              <td class="sheet-template_value_fumble" colspan="2">대실패</td>
+            {{/rollTotal() r1 100}}
+            <!-- simple failure -->
+            {{#rollLess() r1 100}}
+              <td class="sheet-template_value_fail" colspan="2">실패</td>
+            {{/rollLess() r1 100}}
+          {{/rollGreater() success 49}}
+          <!-- skill < 50 -->
+          {{#rollLess() success 50}}
+            <!-- fumble -->
+            {{#rollGreater() r1 95}}
+              <td class="sheet-template_value_fumble" colspan="2">대실패</td>
+            {{/rollGreater() r1 95}}
+            <!-- simple failure -->
+            {{#rollLess() r1 96}}
+              <td class="sheet-template_value_fail" colspan="2">실패</td>
+            {{/rollLess() r1 96}}
+          {{/rollLess() success 50}}
+        {{/rollGreater() r1 success}}
+      </tr>
+    </table>
+  </rolltemplate>
+
+  <!-- 무기 주사위 탬플릿 -->
+  <rolltemplate class="sheet-rolltemplate-coc_dice_roll_combat">
+    <!-- <span>{{success_name}}</span> -->
+    <table class="sheet-template_table">
+      <caption>{{character_name}}</caption>
+      <tr>
+        <td class="sheet-template_label">기능</td>
+        <td class="sheet-template_value">{{skill_name}}</td>
+      </tr>
+      <tr>
+        <td class="sheet-template_label">기준치</td>
+        <td class="sheet-template_value">{{success}}/{{hard}}/{{extreme}}</td>
+      </tr>
+      <!-- 고장값이 있으면 표시 -->
+      {{#malfunction}}
+        <tr>
+          <td class="sheet-template_label">고장</td>
+          <td class="sheet-template_value">{{malfunction}}</td>
+        </tr>
+      {{/malfunction}}
+      <tr>
+        <td class="sheet-template_label">Dice</td>
+        <!-- 일반 주사위는 r1만 쓰고 보너스 주사위는 r2부터도 쓰니까 그냥 r2가 있는지로 둘을 구분 -->
+        {{#r2}}
+          <td class="sheet-template_value">{{r1}} {{r2}} {{r3}}</td>
+        {{/r2}}
+        {{^r2}}
+          <td class="sheet-template_value">{{r1}}</td>
+        {{/r2}}
+      </tr>
+      <tr>
+        <td class="sheet-template_label" colspan="2">결과</td>
+      </tr>
+
+      <!-- 일반 주사위 -->
+      <tr class="sheet-template_value">
+        <!-- critical -->
+        {{#rollTotal() r1 1}}
+          <td class="sheet-template_value_critical" colspan="2">대성공</td>
+        {{/rollTotal() r1 1}}
+        <!-- success -->
+        {{#rollBetween() r1 2 success}}
+          <!-- normal success -->
+          {{#rollGreater() r1 hard}}
+            <td class="sheet-template_value_success" colspan="2">성공</td>
+          {{/rollGreater() r1 hard}}
+          <!-- hard successes -->
+          {{#rollBetween() r1 2 hard}}
+            {{#rollGreater() r1 extreme}}
+              <td class="sheet-template_value_hard" colspan="2">어려운 성공</td>
+            {{/rollGreater() r1 extreme}}
+            <!-- extreme success -->
+            {{#rollBetween() r1 2 extreme}}
+              <td class="sheet-template_value_extreme" colspan="2">극단적 성공</td>
+            {{/rollBetween() r1 2 extreme}}
+          {{/rollBetween() r1 2 hard}}
+        {{/rollBetween() r1 2 success}}
+        <!-- not success -->
+        {{#rollGreater() r1 success}}
+          <!-- skill >= 50 -->
+          {{#rollGreater() success 49}}
+            <!-- fumble -->
+            {{#rollTotal() r1 100}}
+              <td class="sheet-template_value_fumble" colspan="2">대실패</td>
+            {{/rollTotal() r1 100}}
+            <!-- simple failure -->
+            {{#rollLess() r1 100}}
+              <td class="sheet-template_value_fail" colspan="2">실패</td>
+            {{/rollLess() r1 100}}
+          {{/rollGreater() success 49}}
+          <!-- skill < 50 -->
+          {{#rollLess() success 50}}
+            <!-- fumble -->
+            {{#rollGreater() r1 95}}
+              <td class="sheet-template_value_fumble" colspan="2">대실패</td>
+            {{/rollGreater() r1 95}}
+            <!-- simple failure -->
+            {{#rollLess() r1 96}}
+              <td class="sheet-template_value_fail" colspan="2">실패</td>
+            {{/rollLess() r1 96}}
+          {{/rollLess() success 50}}
+        {{/rollGreater() r1 success}}
+      </tr>
+      <!-- 공격일 때 피해 정보 표시 -->
+      {{#damage}}
+        <tr>
+          <td class="sheet-template_label">피해</td>
+          <td class="sheet-template_value">{{damage}}</td>
+        </tr>
+      {{/damage}}
+    </table>
+  </rolltemplate>
+
+
+
+  <rolltemplate class="sheet-rolltemplate-coc_dice_roll_mad">
+    <table class="sheet-template_table">
+      <caption>{{character_name}}</caption>
+      <tr>
+        <td class="sheet-template_label">광기의 발작</td>
+        {{#madness_type}}
+          <td class="sheet-template_value">
+            {{#rollTotal() madness_type 1}}
+              실시간
+            {{/rollTotal() madness_type 1}}
+            {{#rollTotal() madness_type 2}}
+              요약
+            {{/rollTotal() madness_type 2}}
+          </td>
+        {{/madness_type}}
+      </tr>
+      <tr>
+        <td colspan="2" class="sheet-template_value">
+          {{#madness_type}}
+            <div class="sheet-desc">
+              {{#rollTotal() madness_type 1}}
+                {{#rollTotal() rand_roll 1}}
+                  <strong>기억상실</strong>
+                  마지막으로 안전했던 장소에서 떠난 후로 일어난 일을 전혀 기억하지 못합니다. 이 증상은 1D10 라운드 동안 계속됩니다.
+                  <p>라운드 : {{rand_roll2}}</p>
+                {{/rollTotal() rand_roll 1}}
+                {{#rollTotal() rand_roll 2}}
+                  <strong>심신성 장애</strong>
+                  심신증으로 인해 1D10 라운드 동안 눈이 안 보이거나, 소리가 안 들리거나, 사지가 안 움직이게 됩니다.
+                  <p>라운드 : {{rand_roll2}}</p>
+                {{/rollTotal() rand_roll 2}}
+                {{#rollTotal() rand_roll 3}}
+                  <strong>폭력</strong>
+                  분노에 휩싸여 자제심을 완전히 잃고 1D10 라운드 동안 주변의 적과 아군 모두에게 폭력과 파괴를 가합니다.
+                  <p>라운드 : {{rand_roll2}}</p>
+                {{/rollTotal() rand_roll 3}}
+                {{#rollTotal() rand_roll 4}}
+                  <strong>편집증</strong>
+                  1D10 라운드 동안 심각한 편집증에 시달립니다. 모든 사람이 자기를 해치려 든다고 생각하고, 아무도 믿지 않습니다. 항상 감시를 당하고 있고, 주변에 배신자가 있으며, 지금 보이는 것이 거짓이라고 생각합니다.
+                  <p>라운드 : {{rand_roll2}}</p>
+                {{/rollTotal() rand_roll 4}}
+                {{#rollTotal() rand_roll 5}}
+                  <strong>중요한 사람</strong>
+                  탐사자의 백스토리에서 중요한 사람들 항목을 봅니다. 곁에 있는 사람을 자기의 중요한 사람으로 착각하고, 관계에 맞게 행동합니다. 1D10라운드 동안 지속됩니다.
+                  <p>라운드 : {{rand_roll2}}</p>
+                {{/rollTotal() rand_roll 5}}
+                {{#rollTotal() rand_roll 6}}
+                  <strong>기절</strong>
+                  기절해서 1D10라운드 후에 깨어납니다.
+                  <p>라운드 : {{rand_roll2}}</p>
+                {{/rollTotal() rand_roll 6}}
+                {{#rollTotal() rand_roll 7}}
+                  <strong>필사적인 도주</strong>
+                  가능한 모든 수단을 동원해서 최대한 멀리 도망칩니다. 다른 사람들을 남겨 두고 하나밖에 없는 차를 혼자 몰고 가 버릴 수도 있습니다. 1D10 라운드 동안 계속 도망칩니다.
+                  <p>라운드 : {{rand_roll2}}</p>
+                {{/rollTotal() rand_roll 7}}
+                {{#rollTotal() rand_roll 8}}
+                  <strong>발작적 행동이나 감정 폭발</strong>
+                  1D10 라운드 동안 웃거나, 울거나, 비명을 지르거나 하느라 아무 행동도 하지 않습니다.
+                  <p>라운드 : {{rand_roll2}}</p>
+                {{/rollTotal() rand_roll 8}}
+                {{#rollTotal() rand_roll 9}}
+                  <strong>공포증</strong>
+                  새로운 공포증이 생깁니다. 룰북에 있는 공포증의 예에서 1D100을 굴리거나 수호자가 적절한 것을 고릅니다. 공포이 대상이 자리에 없어도 탐사자는 1D10 라운드 동안 그 모습을 상상하고 공포에 질립니다.
+                  <p>라운드 : {{rand_roll2}}</p>
+                {{/rollTotal() rand_roll 9}}
+                {{#rollTotal() rand_roll 10}}
+                  <strong>집착증</strong>
+                  새로운 집착증이 생깁니다. 룰북에 있는 집착증의 예에서 1D100을 굴리거나 수호자가 적절한 것을 고릅니다. 탐사자는 다음 1D10 라운드 동안 새로운 집착증에 몰입합니다.
+                  <p>라운드 : {{rand_roll2}}</p>
+                {{/rollTotal() rand_roll 10}}
+              {{/rollTotal() madness_type 1}}
+              {{#rollTotal() madness_type 2}}
+                {{#rollTotal() rand_roll 1}}
+                  <strong>기억상실</strong>
+                  탐사자는 낯선 곳에서 정신을 차리며, 자기가 누구인지도 기억하지 못합니다. 시간이 지나면 기억이 조금씩 돌아옵니다.
+                {{/rollTotal() rand_roll 1}}
+                {{#rollTotal() rand_roll 2}}
+                  <strong>도난</strong>
+                  탐사자가 1D10시간 후에 정신을 차려 보니 도난을 당했습니다. 다친 곳은 없습니다. 소중한 물건(탐사자 백스토리 참조)을 지니고 있었으면 운 판정을 해서 빼앗겼는지 확인합니다. 그 외의 귀중품은 자동으로 없어집니다.
+                  <p>시간 : {{rand_roll2}}</p>
+                {{/rollTotal() rand_roll 2}}
+                {{#rollTotal() rand_roll 3}}
+                  <strong>부상</strong>
+                  탐사자가 1D10시간 후에 정신을 차려보니 잔뜩 다쳤습니다. 체력은 광기에 빠지기 전의 절반이 되어 있지만, 그 사이에 중상을 입지는 않았습니다. 강도를 당하지도 않았습니다. 부상을 입은 부위는 수호자가 정합니다.
+                  <p>시간 : {{rand_roll2}}</p>
+                {{/rollTotal() rand_roll 3}}
+                {{#rollTotal() rand_roll 4}}
+                  <strong>폭력</strong>
+                  탐사자가 폭력과 파괴 행각을 벌입니다. 정신을 차렸을 때 그 사이의 행동이 기억날 수도 있고 기억나지 않을 수도 있습니다. 탐사자가 무엇을 대상으로 폭력을 휘둘렀는지, 그리고 사람을 죽이거나 다치게 했는지는 수호자가 결정합니다.
+                {{/rollTotal() rand_roll 4}}
+                {{#rollTotal() rand_roll 5}}
+                  <strong>사상/신념</strong>
+                  탐사자의 백스토리에서 사상/신념을 확인합니다. 탐사자는 그중 하나를 극단적이고 괴이한 방법으로 표출합니다. 예를 들어, 신앙심이 깊은 사람은 지하철에서 시끄럽게 설교를 하다가 정신을 차릴 수 있습니다.
+                {{/rollTotal() rand_roll 5}}
+                {{#rollTotal() rand_roll 6}}
+                  <strong>중요한 사람들</strong>
+                  탐사자의 백스토리에서 중요한 사람들을 찾아 그 관계가 중요한 이유를 확인합니다. 탐사자는 발작이 지속되는 동안 (1D10시간 이상) 중요한 사람에게 가까이 가서 관계의 성질에 맞는 행동을 하려고 합니다.
+                  <p>시간 : {{rand_roll2}}</p>
+                {{/rollTotal() rand_roll 6}}
+                {{#rollTotal() rand_roll 7}}
+                  <strong>시설 감금</strong>
+                  탐사자가 정신을 차려 보니 정신병원이나 경찰서 유치장에 갇혀 있습니다. 그간의 사정이 조금씩 기억나기 시작할 수도 있습니다.
+                {{/rollTotal() rand_roll 7}}
+                {{#rollTotal() rand_roll 8}}
+                  <strong>필사적인 도주</strong>
+                  탐사자가 정신을 차려 보니 먼 곳에 와 있습니다. 황야를 걷고 있을 수도 있고 열차나 장거리 버스에 타고 있을 수도 있습니다.
+                {{/rollTotal() rand_roll 8}}
+                {{#rollTotal() rand_roll 9}}
+                  <strong>공포증</strong>
+                  탐사자에게 새로운 공포증이 생깁니다. 룰북에 있는 공포증의 예를 참고해 1D100으로 정하거나 수호자가 적절한 것을 고릅니다. 탐사자는 새로운 공포의 대상을 피하기 위해 온갖 조치를 다 취한 상태로 1D10시간 후에 정신을 차립니다.
+                  <p>시간 : {{rand_roll2}}</p>
+                {{/rollTotal() rand_roll 9}}
+                {{#rollTotal() rand_roll 10}}
+                  <strong>집착증</strong>
+                  탐사자에게 새로운 집착증이 생깁니다. 룰북에 있는 집착증의 예를 참고해 1D100으로 정하거나 수호자가 적절한 것을 고릅니다. 탐사자는 1D10시간 후에 정신을 차립니다. 이 발작이 지속되는 동안, 탐사자는 새로운 집착증에 완전히 빠집니다. 다른 사람이 보기에도 명확하게 드러나는지는 수호자와 플레이어가 결정합니다.
+                  <p>시간 : {{rand_roll2}}</p>
+                {{/rollTotal() rand_roll 10}}
+              {{/rollTotal() madness_type 2}}
+            </div>
+          {{/madness_type}}
+        </td>
+      </tr>
+    </table>
+  </rolltemplate>
+
+
+
+  <script type="text/worker">
+    // Utility functions
+
+    /**
+     * 이동력 (Move Rate) 계산
+     */
+    const calculateMoveRate = (str, dex, size, age) => {
+      const calculatePureMove = (s, d, z) => {
+        if (s < z && d < z) {
+          return 7;
+        } else if (s > z && d > z) {
+          return 9;
+        } else {
+          // (s >= z || d >= z)
+          return 8;
+        }
+      };
+
+      const calculateAgeEffect = (a) => {
+        // 나이가 40+ 이면 (나이 - 30)/10 만큼 이동력 감소
+        // 90+는 80대로 간주
+        const adjustedAge = Math.min(80, a);
+        return adjustedAge < 39
+          ? 0
+          : Math.floor((adjustedAge - 30)/10);
+      };
+
+      return (calculatePureMove(str, dex, size) - calculateAgeEffect(age));
+    };
+
+    /**
+     * 체구 및 DB 계산을 위한 값 계산
+     * 수호자 룰북 p33
+     */
+    const getBuildIndex = (str, size) => {
+      const sum = str + size;
+
+      // 205+ 이면 기본값 3에 80마다 1 추가 (3 - )
+      if (sum > 204) {
+        return Math.floor((sum - 205)/80) + 3;
+      } else if (sum > 84) {
+        // 85 - 204 이면 기본값 0에 40마다 1 추가 ([0, 2] - 85-124: 0, 125-164: 1, 165-204: 2)
+        return Math.floor((sum - 85)/40);
+      } else if (sum > 64) {
+        return -1;
+      } else {
+        // 2 - 64
+        return -2;
+      }
+    };
+
+    /**
+     * 체구 (Build) 계산
+     */
+    const calculateBuild = (str, size) => {
+      return getBuildIndex(str, size);
+    };
+
+    /**
+     * DB (Damage Bonus) 계산
+     */
+    const calculateDb = (str, size) => {
+      const buildIndex = getBuildIndex(str, size);
+
+      if (buildIndex > 1) {
+        // 체구 2+ 면 (체구-1)D6 e.g. 2체구 = 1D6, 3체구 = 2D6
+        return `${buildIndex - 1}D6`;
+      } else if (buildIndex == 1) {
+        return "1D4";
+      } else {
+        // [-2, 0] -> 값 그대로 사용
+        return buildIndex;
+      }
+    };
+
+
+  // 테마 설정
+	on("change:bg", function() {
+		getAttrs(["bg", "chk_theme1"], function(values) {
+      setAttrs({chk_theme1:values.bg});
+		});
+	});
+
+  //스킬란 바꾸기
+  on("change:changer", function() {
+    getAttrs(["changer", "chk_menu"], function(values) {
+      setAttrs({chk_menu:values.changer});
+    });
+  });
+
+  //특성치 및 기능치 자동 계산
+  on("change:CON change:SIZ change:POW change:EDU change:DEX change:STR change:age", function(){
+    getAttrs(["CON", "SIZ", "POW", "EDU", "DEX", "STR", "age"], function(values) {
+      var con = parseInt(values.CON);
+      var siz = parseInt(values.SIZ);
+      var hpmax1 = con/10 + siz/10;
+      var hpmax = Math.floor(hpmax1);
+
+      var pow = parseInt(values.POW);
+      var mpmax1 = pow/5;
+      var mpmax = Math.floor(mpmax1);
+
+      var mad = Math.floor(pow - mpmax1);
+
+      var edu = parseInt(values.EDU);
+
+      var dex = parseInt(values.DEX);
+      var dodge1 = dex/2;
+      var dodgeC = Math.floor(dodge1);
+
+      var str = parseInt(values.STR);
+      var age = parseInt(values.age);
+      var mov = calculateMoveRate(str, dex, siz, age);
+      var build = calculateBuild(str, siz);
+      var damageBonus = calculateDb(str, siz);
+
+      console.log(`str dex siz age => mov: ${str}, ${dex}, ${siz}, ${age} => ${mov}`);
+      console.log(`str siz => idx build db: ${str}, ${siz} => ${getBuildIndex(str, siz)} ${build} ${damageBonus}`);
+
+      setAttrs({
+        hp_Max:hpmax,
+        mp_Max:mpmax,
+        san1st:mad,
+        moveHolder:mov,
+        db: damageBonus,
+        build: build,
+      });
+      // setAttrs({mp_Max:mpmax});
+      // setAttrs({nativeL:edu});
+      // setAttrs({evasion:dodgeC});
+      // setAttrs({san1st:mad});
+      // setAttrs({ move: `${mov}` });
+    });
+  });
+
+</script>
