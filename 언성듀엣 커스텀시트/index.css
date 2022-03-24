@@ -431,7 +431,6 @@
 .sheet-rolltemplate-binder .sheet-container .sheet-rollB span:nth-child(2) {
   display: inline-block;
   width: 20px;
-  transform: translateY(-50%);
 }
 
 .sheet-rolltemplate-binder .sheet-container .sheet-dsc,
