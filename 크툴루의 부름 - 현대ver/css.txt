@@ -1,0 +1,992 @@
+@font-face {
+  font-family: 'MICEGothic Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RIDIBatang';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .inlinerollresult,
+.sheet-rolltemplate-coc_dice_roll_free .inlinerollresult,
+.sheet-rolltemplate-coc_dice_roll_mad .inlinerollresult,
+.sheet-rolltemplate-coc_dice_roll .inlinerollresult,
+.sheet-rolltemplate-coc_dice_roll_combat .inlinerollresult,
+.sheet-rolltemplate-coc_dice_roll_free .inlinerollresult.fullcrit,
+.sheet-rolltemplate-coc_dice_roll_free .inlinerollresult.importantroll,
+.sheet-rolltemplate-coc_dice_roll_free .inlinerollresult.fullfail,
+.sheet-rolltemplate-coc_dice_roll_b .inlinerollresult.fullcrit,
+.sheet-rolltemplate-coc_dice_roll_b .inlinerollresult.importantroll,
+.sheet-rolltemplate-coc_dice_roll_b .inlinerollresult.fullfail,
+.sheet-rolltemplate-coc_dice_roll_mad .inlinerollresult.fullcrit,
+.sheet-rolltemplate-coc_dice_roll_mad .inlinerollresult.importantroll,
+.sheet-rolltemplate-coc_dice_roll_mad .inlinerollresult.fullfail,
+.sheet-rolltemplate-coc_dice_roll .inlinerollresult.fullcrit,
+.sheet-rolltemplate-coc_dice_roll .inlinerollresult.importantroll,
+.sheet-rolltemplate-coc_dice_roll .inlinerollresult.fullfail,
+.sheet-rolltemplate-coc_dice_roll_combat .inlinerollresult.fullcrit,
+.sheet-rolltemplate-coc_dice_roll_combat .inlinerollresult.importantroll,
+.sheet-rolltemplate-coc_dice_roll_combat .inlinerollresult.fullfail {
+  background-color: transparent;
+  border: none;
+  padding: 0 3px 0 3px;
+  font-weight: bold;
+  cursor: help;
+  font-size: 1.1em;
+}
+
+.ui-dialog .charsheet button[type=roll]:before {
+  content: "";
+}
+
+.ui-dialog .charsheet button[type=roll],
+.repcontrol_add,
+.repcontrol_edit {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  appearance: none;
+  background: transparent;
+}
+
+.sheet-character_sheet {
+  font-family: 'RIDIBatang', serif;
+}
+
+.sheet-character_sheet input {
+  background: transparent;
+  border-radius: none;
+  border: none;
+  padding: 2px 5px;
+  margin: 0;
+  color: #000;
+}
+
+.sheet-wrap {
+  width: 800px;
+  height: auto;
+  background: #fff;
+  box-shadow: 1px 1px 3px;
+}
+
+.sheet-header {
+  overflow: hidden;
+}
+
+.sheet-header>div {
+  float: left;
+}
+
+.sheet-header_left,
+.sheet-bottom_left {
+  width: 300px;
+  background: #448aca;
+  overflow: hidden;
+}
+
+.sheet-header_left>div {
+  margin-left: 30px;
+}
+
+.sheet-deco_top,
+.sheet-deco_bottom {
+  width: 45px;
+  height: 30px;
+  background: #bfbfbf;
+  box-shadow: 1px 1px 3px;
+}
+
+.sheet-deco_bottom {
+  margin-left: 30px;
+  height: 50px;
+}
+
+.sheet-avartar_shadow {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #bfbfbf;
+  margin-left: 60px !important;
+  margin-top: 10px;
+}
+
+.sheet-avartar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #fff;
+  overflow: hidden;
+  margin-left: -10px;
+  transform: translateY(-10px);
+}
+
+.sheet-name {
+  width: 240px;
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sheet-name input::placeholder {
+  color: #aaa;
+}
+
+.sheet-character_name {
+  display: inline-block;
+  width: 240px;
+  border-bottom: 2px solid #fff;
+  overflow: hidden;
+}
+
+.sheet-character_name input {
+  width: 240px;
+  height: 30px;
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
+  color: #fff;
+}
+
+.sheet-player_name {
+  display: inline-block;
+  width: 240px;
+}
+
+.sheet-player_name input {
+  width: 240px;
+  height: 20px;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  font-weight: normal;
+}
+
+.sheet-stat {
+  margin-left: 35px !important;
+  margin-bottom: 20px;
+}
+
+.sheet-stat>div {
+  display: inline-block;
+  border-radius: 5px;
+  background: #fff;
+  width: 75px;
+  height: 95px;
+  overflow: hidden;
+  text-align: center;
+  font-family: 'MICEGothic Bold', sans-serif;
+}
+
+.sheet-stat>div>span {
+  display: block;
+  font-size: 16px;
+  font-weight: normal;
+  margin-top: 5px;
+}
+
+.sheet-stat>div>input {
+  display: block;
+  width: 75px;
+  padding: 2px;
+  font-size: 30px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.sheet-stat>div>button {
+  display: none;
+}
+
+.sheet-stat>div>label:nth-last-child(3),
+.sheet-san_roll>label:nth-child(2),
+.sheet-weapon>div>div>button:nth-child(1)::before,
+.repcontainer[data-groupname="repeating_weapon"] div>div>button:nth-child(1)::before {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  padding: 0;
+  background: #0068b7;
+  background-image: url(https://imgur.com/xRyRuNc.png);
+  background-size: 25px 25px;
+}
+
+.sheet-stat>div>label:nth-last-child(3):hover,
+.sheet-luk_btn>label:nth-child(2):hover,
+.sheet-san_roll>label:nth-child(2):hover,
+.sheet-skillContents>div>div>label:nth-last-child(3):hover,
+.sheet-weapon>div>div>button:nth-child(1):hover::before,
+.repcontainer[data-groupname="repeating_weapon"] div>div>button:nth-child(1):hover::before {
+  background-color: #004880;
+}
+
+.sheet-stat>div>label:nth-last-child(1),
+.sheet-san_roll>label:nth-child(4),
+.sheet-weapon>div>div>button:nth-child(2)::before,
+.repcontainer[data-groupname="repeating_weapon"] div>div>button:nth-child(2)::before {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  padding: 0;
+  background: #79a3c9;
+  background-image: url(https://imgur.com/xRyRuNc.png);
+  background-size: 25px 25px;
+}
+
+.sheet-stat>div>label:nth-last-child(1):hover,
+.sheet-luk_btn>label:nth-child(4):hover,
+.sheet-san_roll>label:nth-child(4):hover,
+.sheet-skillContents>div>div>label:nth-last-child(1):hover,
+.sheet-weapon>div>div>button:nth-child(2):hover::before,
+.repcontainer[data-groupname="repeating_weapon"] div>div>button:nth-child(2):hover::before {
+  background-color: #4d6880;
+}
+
+.sheet-header_right,
+.sheet-bottom_right {
+  width: 500px;
+}
+
+.sheet-bottom_right {
+  padding-top: 30px;
+}
+
+.sheet-header_right>div {
+  margin-left: 20px;
+}
+
+.sheet-seul {
+  text-align: right;
+}
+
+.sheet-seul>span {
+  font-size: 8px;
+  color: #eee;
+}
+
+.sheet-info,
+.sheet-san {
+  width: 430px;
+  overflow: hidden;
+}
+
+.sheet-info {
+  padding-top: 10px;
+}
+
+.sheet-info_name,
+.sheet-san_name,
+.sheet-weapon_name {
+  border-bottom: 10px double #0068b7;
+  text-align: right;
+}
+
+.sheet-info_name input {
+  text-align: center;
+  width: 40px;
+  font-weight: normal;
+}
+
+.sheet-info_name input:nth-last-child(3) {
+  width: 95px;
+}
+
+.sheet-info_name>span,
+.sheet-san_name>span,
+.sheet-skill_title>span,
+.sheet-weapon_name {
+  font-family: 'MICEGothic Bold';
+  font-weight: normal;
+  color: #0068b7;
+}
+
+.sheet-info_name>span:nth-last-child(2),
+.sheet-san_name>span:nth-child(1),
+.sheet-skill_title>span:nth-child(1),
+.sheet-weapon_name>span:nth-child(1) {
+  margin-left: 28px;
+  font-size: 40px;
+}
+
+.sheet-info_name>span:nth-last-child(1),
+.sheet-san_name>span:nth-child(2),
+.sheet-skill_title>span:nth-child(2),
+.sheet-weapon_name>span:nth-child(2) {
+  font-size: 24px;
+}
+
+.sheet-memo>textarea {
+  width: 410px;
+  height: 145px;
+  padding: 10px;
+  border: none;
+  border-radius: 0 0 5px 0;
+  resize: none;
+  background: #eee;
+}
+
+.sheet-point {
+  height: 70px;
+  color: #fff;
+  text-align: left;
+  font-family: 'MICEGothic Bold';
+}
+
+.sheet-point_wrap {
+  height: 70px;
+  background: #0068b7;
+  overflow: hidden;
+  text-align: left;
+}
+
+.sheet-point_wrap>div {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 25px;
+}
+
+.sheet-point_wrap>div:nth-child(1) {
+  margin-left: 20px;
+}
+
+.sheet-point_wrap input {
+  text-align: center;
+  width: 60px;
+  font-size: 24px;
+  color: #fff;
+  font-weight: normal;
+}
+
+.sheet-point_wrap span:nth-child(1) {
+  display: block;
+  text-align: center;
+  font-weight: normal;
+}
+
+.sheet-button_wrap {
+  overflow: hidden;
+}
+
+.sheet-button_wrap>div {
+  display: inline-block;
+  float: left;
+  margin-top: 10px;
+}
+
+.sheet-button_wrap>div>input, .sheet-button_wrap>div>button,
+.sheet-san_chk>input, .sheet-san_roll>button, .sheet-san_table>button {
+  display: none;
+}
+
+.sheet-hp_chk {
+  margin-right: 199px;
+}
+
+.sheet-hp_chk>label {
+  width: 30px;
+  height: 25px;
+  font-size: 14px;
+  padding-left: 15px;
+  line-height: 25px;
+  border-radius: 5px;
+  display: inline-block;
+  background: #dcdcdc;
+}
+
+.sheet-hp_chk>label:nth-child(2) {
+  margin-left: 25px;
+  margin-right: 5px;
+}
+
+.sheet-hp_chk>input:nth-child(1):checked+label,
+.sheet-hp_chk>input:nth-child(3):checked+label {
+  background: #448aca;
+  color: #fff;
+}
+
+.sheet-luk_btn>label,
+.sheet-skillContents>div>div>label {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  border-radius: 50%;
+  background-image: url(https://imgur.com/xRyRuNc.png);
+  background-size: 25px 25px;
+}
+
+.sheet-luk_btn>label:nth-child(2),
+.sheet-skillContents>div>div>label:nth-last-child(3) {
+  background-color: #0068b7;
+}
+
+.sheet-luk_btn>label:nth-child(4),
+.sheet-skillContents>div>div>label:nth-last-child(1) {
+  background-color: #79a3c9;
+}
+
+.sheet-db {
+  width: 430px;
+  margin-top: 50px;
+  background: #eee;
+  font-family: 'MICEGothic Bold';
+  font-size: 14px;
+}
+
+.sheet-db>span {
+  font-weight: normal;
+  margin: 5px 10px;
+}
+
+.sheet-db>input {
+  width: 140px;
+  text-align: center;
+}
+
+.sheet-san {
+  margin-top: 10px;
+}
+
+.sheet-san_inner {
+  width: 430px;
+  background: #eee;
+  border-radius: 0 0 5px 0;
+}
+
+.sheet-san_inner_name {
+  padding: 5px 10px;
+}
+
+.sheet-san_inner_name>span {
+  display: inline-block;
+  text-align: center;
+  width: 130px;
+  font-size: 14px;
+  font-family: 'MICEGothic Bold';
+  font-weight: normal;
+}
+
+.sheet-san_point {
+  padding: 0 10px;
+}
+
+.sheet-san_point>input {
+  width: 100px;
+  text-align: center;
+  font-size: 36px;
+  font-weight: normal;
+  margin: 0 15px;
+}
+
+.sheet-san_chk, .sheet-san_roll, .sheet-san_table {
+  display: inline-block;
+  height: 25px;
+  overflow: hidden;
+  font-family: 'MICEGothic Bold';
+  font-weight: normal;
+}
+
+.sheet-san_chk {
+  margin-left: 20px;
+}
+
+.sheet-san_chk>label {
+  width: 30px;
+  height: 25px;
+  font-size: 14px;
+  padding-left: 15px;
+  line-height: 25px;
+  border-radius: 5px;
+  display: inline-block;
+  background: #fff;
+}
+
+.sheet-san_chk>input:checked+label {
+  background: #448aca;
+  color: #fff;
+}
+
+.sheet-san_roll {
+  margin: 0 45px;
+}
+
+.sheet-san_table>label {
+  width: 40px;
+  height: 25px;
+  padding-left: 10px;
+  font-size: 14px;
+  line-height: 25px;
+  border-radius: 5px;
+  display: inline-block;
+  background: #0068b7;
+  color: #fff;
+}
+
+.sheet-san_table>label:nth-last-child(1) {
+  width: 30px;
+  padding-left: 15px;
+}
+
+.sheet-san_table>label:hover {
+  background-color: #004880;
+}
+
+.sheet-skill_title {
+  text-align: right;
+  margin-right: 50px;
+  margin-top: 3px;
+}
+
+.sheet-middle {
+  width: 800px;
+  background: #eee;
+  border-top: 10px double #0068b7;
+}
+
+.sheet-skillContents {
+  margin: 0 50px;
+  margin-top: 20px;
+}
+
+.sheet-skillContents>div {
+  display: inline-block;
+  width: 210px;
+  overflow: hidden;
+}
+
+.sheet-skillContents>div:nth-child(2) {
+  margin: 0 30px;
+}
+
+.sheet-skillContents>div>div {
+  height: 40px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.sheet-skillContents>div>div>* {
+  float: left;
+}
+
+.sheet-skillContents>div>div>div {
+  display: inline-block;
+  width: 80px;
+}
+
+.sheet-skillContents>div>div>div>span {
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.sheet-skillContents>div>div>input:nth-child(2) {
+  width: 50px;
+  height: 30px;
+  margin: 0 5px;
+  background: #fff;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.sheet-skillContents>div>div>button {
+  display: none;
+}
+
+.sheet-skillContents>div>div>label {
+  margin-top: 7px;
+  margin-left: 7px;
+}
+
+.sheet-skillContents>div>div>input:nth-child(1) {
+  width: 80px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: normal;
+  margin-top: 5px;
+  border-bottom: 2px solid #0068b7;
+  border-radius: 0;
+}
+
+.sheet-weapon_name>span:nth-child(2) {
+  margin-right: 50px;
+}
+
+.sheet-weapon {
+  margin-top: 20px;
+  padding: 0 50px;
+}
+
+.sheet-weapon select {
+  background: transparent;
+  border: none;
+  appearance: none;
+  font-size: 12px;
+  text-align: center;
+  width: 90px;
+}
+
+.sheet-weapon input[type="text"],
+.repitem>.sheet-combat input[type="text"]:not(.repitem>.sheet-combat>input:nth-child(1)) {
+  width: 50px;
+  text-align: center;
+  font-family: "RIDIBatang";
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.sheet-weapon>div,
+.repitem {
+  border-bottom: 2px solid #0068b7;
+  border-radius: 0;
+  margin-bottom: 5px;
+}
+
+.sheet-weapon>div:nth-last-child(1) {
+  border-bottom: none;
+}
+
+.sheet-weapon>div>input:nth-child(1),
+.repitem>.sheet-combat>input {
+  width: 140px;
+  height: 30px;
+  font-family: 'MICEGothic Bold';
+  font-weight: normal;
+  font-size: 16px;
+  text-align: center;
+}
+
+.sheet-weapon>div>div,
+.repitem>.sheet-combat>div {
+  display: inline-block;
+}
+
+.sheet-weapon>div>div>button,
+.sheet-weapon>div>div>button:hover,
+.repcontrol_add,
+.repcontrol_add:hover,
+.repcontrol_edit,
+.repcontrol_edit:hover {
+  color: #0068b7;
+}
+
+.sheet-weapon>div>select:nth-child(7),
+.repitem>.sheet-combat>select:nth-child(7) {
+  width: 70px;
+}
+
+.repcontainer {
+  border: none;
+}
+
+.sheet-bottom>div {
+  display: inline-block;
+  float: left;
+}
+
+.sheet-item,
+.sheet-money {
+  padding-left: 30px;
+}
+
+.sheet-item {
+  padding-top: 20px;
+}
+
+.sheet-item>span,
+.sheet-money>span,
+.sheet-bottom_right>div>span {
+  display: block;
+  font-family: 'MICEGothic Bold';
+  font-size: 16px;
+  color: #fff;
+}
+
+.sheet-bottom_right>div>span {
+  color: #000;
+  font-weight: normal;
+}
+
+.sheet-bottom_left>div>textarea {
+  width: 220px;
+  padding: 10px;
+  background: #fff;
+  color: #000;
+  resize: none;
+  border-radius: 0 0 5px 0;
+  border: none;
+}
+
+.sheet-money>textarea:nth-child(2) {
+  height: 20px;
+}
+
+.sheet-money>textarea:nth-child(3) {
+  height: 100px;
+}
+
+.sheet-bottom_right {
+  padding-top: 20px;
+}
+
+.sheet-bottom_right>div {
+  margin-left: 20px;
+}
+
+.sheet-bottom_right>div>textarea {
+  width: 410px;
+  height: 100px;
+  padding: 10px;
+  margin: 0;
+  background: #eee;
+  color: #000;
+  resize: none;
+  border-radius: 0 0 5px 0;
+  border: none;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b,
+.sheet-rolltemplate-coc_dice_roll,
+.sheet-rolltemplate-coc_dice_roll_combat {
+  width: 240px;
+  font-family: 'RIDIBatang';
+}
+
+.sheet-rolltemplate-coc_dice_roll_b>div,
+.sheet-rolltemplate-coc_dice_roll>div,
+.sheet-rolltemplate-coc_dice_roll_combat>div {
+  width: 240px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b>div {
+  padding: 0;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b>div:nth-child(1),
+.sheet-rolltemplate-coc_dice_roll>div:nth-child(1),
+.sheet-rolltemplate-coc_dice_roll_combat>div:nth-child(1) {
+  background: #0068b7;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b>div>.sheet-h1,
+.sheet-rolltemplate-coc_dice_roll>div>h1,
+.sheet-rolltemplate-coc_dice_roll_combat>div>h1 {
+  display: inline-block;
+  font-size: 20px;
+  font-family: 'RIDIBatang';
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  line-height: 35px;
+  height: 35px;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b>div:nth-child(2),
+.sheet-rolltemplate-coc_dice_roll>div>div,
+.sheet-rolltemplate-coc_dice_roll_combat>div>div {
+  display: block;
+  background: #fff;
+  margin: 0;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-b_skillname {
+  display: inline-block;
+  font-size: 18px;
+  font-family: 'RIDIBatang';
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-b_target {
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'RIDIBatang';
+  padding: 10px 0;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-b_break {
+  color: #aaa;
+  font-weight: bold;
+  font-size: 10px;
+  font-family: 'RIDIBatang';
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-b_dice {
+  margin-bottom: 20px;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-b_dice .sheet-template_label {
+  display: block;
+  font-size: 10px;
+  font-family: 'RIDIBatang';
+  font-weight: bold;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-b_dice .sheet-template_value,
+.sheet-rolltemplate-coc_dice_roll>div>div:nth-child(5)>span:nth-child(2),
+.sheet-rolltemplate-coc_dice_roll_combat>div>div:nth-child(6)>.sheet-template_value {
+  font-size: 28px;
+  font-family: 'RIDIBatang';
+  color: #0068b7;
+  padding: 0 5px;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-b_result {
+  text-align: left;
+  padding: 5px 0;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-b_result .sheet-template_label {
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+  font-weight: bold;
+  color: #aaa;
+  padding: 5px 0;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-b_result span:not(.sheet-template_label) {
+  display: inline-block;
+  width: 170px;
+  font-size: 16px;
+  font-family: 'RIDIBatang';
+  font-weight: bold;
+  text-align: center;
+  padding: 5px 0;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-bg_grey {
+  padding: 5px 0;
+  background: #eee;
+}
+
+.sheet-rolltemplate-coc_dice_roll .sheet-template_value_fail,
+.sheet-rolltemplate-coc_dice_roll_b .sheet-template_value_fail,
+.sheet-rolltemplate-coc_dice_roll_combat .sheet-template_value_fail {
+  color: #a52a2a;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-template_value_hard,
+.sheet-rolltemplate-coc_dice_roll .sheet-template_value_hard,
+.sheet-rolltemplate-coc_dice_roll_combat .sheet-template_value_hard {
+  color: #008000;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-template_value_extreme,
+.sheet-rolltemplate-coc_dice_roll .sheet-template_value_extreme,
+.sheet-rolltemplate-coc_dice_roll_combat .sheet-template_value_extreme {
+  color: #008080;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-template_value_critical,
+.sheet-rolltemplate-coc_dice_roll .sheet-template_value_critical,
+.sheet-rolltemplate-coc_dice_roll_combat .sheet-template_value_critical {
+  color: #90ee90;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-template_value_fumble,
+.sheet-rolltemplate-coc_dice_roll .sheet-template_value_fumble,
+.sheet-rolltemplate-coc_dice_roll_combat .sheet-template_value_fumble {
+  color: #dc143c;
+}
+
+.sheet-rolltemplate-coc_dice_roll .sheet-template_value,
+.sheet-rolltemplate-coc_dice_roll_combat .sheet-template_value {
+  font-family: 'RIDIBatang';
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px 0;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-b_damage .sheet-template_label {
+  display: block;
+  color: #aaa;
+  font-weight: bold;
+  font-size: 10px;
+  font-family: 'RIDIBatang';
+  margin-top: 5px;
+}
+
+.sheet-rolltemplate-coc_dice_roll_b .sheet-b_damage .sheet-template_value {
+  font-family: 'RIDIBatang';
+  font-size: 18px;
+}
+
+.sheet-rolltemplate-coc_dice_roll>div>div:nth-child(3) {
+  font-size: 18px;
+  font-family: 'RIDIBatang';
+  font-weight: bold;
+  padding: 10px;
+}
+
+.sheet-rolltemplate-coc_dice_roll>div>div:nth-child(5)>span:nth-child(1),
+.sheet-rolltemplate-coc_dice_roll_combat>div>div:nth-last-child(3)>span:nth-child(1) {
+  display: block;
+  padding: 5px;
+}
+
+.sheet-rolltemplate-coc_dice_roll_mad>div {
+  width: 240px;
+  background: #fff;
+}
+
+.sheet-rolltemplate-coc_dice_roll_mad>div>h1 {
+  background: #448aca;
+  font-size: 20px;
+  font-family: 'RIDIBatang';
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 0;
+  margin-bottom: 5px;
+  border-bottom: 3px double #fff;
+}
+
+.sheet-rolltemplate-coc_dice_roll_mad h1 span:nth-child(1) {
+  font-size: 18px;
+  font-family: 'RIDIBatang';
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin: 10px 0;
+  color: #000;
+}
+
+.sheet-rolltemplate-coc_dice_roll_mad .sheet-template_value div strong {
+  display: block;
+  font-size: 14px;
+  font-family: 'RIDIBatang';
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.sheet-rolltemplate-coc_dice_roll_mad .sheet-template_value div {
+  padding: 10px;
+}
+
+.sheet-rolltemplate-coc_dice_roll_mad .sheet-template_value div p {
+  display: block;
+  text-align: right;
+  margin: 10px;
+}
+
+.sheet-rolltemplate-coc_dice_roll_combat>div>div:nth-child(4),
+.sheet-rolltemplate-coc_dice_roll_combat>div>div:nth-child(3) {
+  padding: 5px 0;
+}
